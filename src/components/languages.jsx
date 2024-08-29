@@ -395,7 +395,7 @@ function Languages() {
                                             <p className='text-sm font-semibold'>FASTAPI, PERN stack, AWS, Docker, React Native, Sentry, Cypress, OpenAI, META API</p>
                                             <p className='text-sm'>As a lead developer at Circle Health, I oversee the architecture and development of top-tier SaaS products, managing databases, deploying to CICD, and ensuring the security and scalability of our offerings.</p>
                                         </div> : work === 'projects' ?
-                                            <div className='flex gap-5 mt-5 h-full'>
+                                            <div className='flex flex-col md:flex-row lg:flex-row gap-5 mt-5 h-full'>
                                                 <a id='wacommtitle' className='flex-1 flex flex-col gap-3 bg-[#F8F8F8] p-5 h-full rounded-[35px]'>
                                                     <div className='flex flex-1 justify-between items-center'>
                                                         <p className='text-[#E16349] font-bold'>WACOMM</p>
