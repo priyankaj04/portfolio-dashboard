@@ -458,7 +458,7 @@ function Languages() {
                                                             />
                                                             WACOMM
                                                         </div>
-                                                        <a onClick={() => window.open('https://github.com/priyankaj04', '_blank')} id='githubproj1' className='cursor-pointer p-2 bg-white rounded-full flex justify-center items-center'>
+                                                        <a onClick={() => window.open('https://github.com/priyankaj04/WACOMM', '_blank')} id='githubproj1' className='cursor-pointer p-2 bg-white rounded-full flex justify-center items-center'>
                                                             <svg
                                                                 width="25px"
                                                                 height="25px"
