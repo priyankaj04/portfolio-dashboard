@@ -1,4 +1,3 @@
-import { ResponsivePieCanvas } from '@nivo/pie';
 import React, { useState, useEffect, useRef } from "react";
 import 'react-tooltip/dist/react-tooltip.css';
 import { Tooltip } from 'react-tooltip';
