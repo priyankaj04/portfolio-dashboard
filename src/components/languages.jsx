@@ -326,10 +326,10 @@ function Languages() {
                             <div className='bg-[#ffffff] border-2 border-[#f2f2f2] rounded-[35px] w-full h-[70%] p-5 flex flex-col gap-3'>
                                 <div>
                                     <div className='flex flex-1 gap-2 items-center text-sm flex-wrap'>
-                                        <div onClick={() => setType('backend')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#f2f2f2] cursor-pointer hover:bg-[#f2f2f2] hover:font-semibold hover:scale-105 ${type === 'backend' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : ''}`}>Backend</div>
-                                        <div onClick={() => setType('frontend')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#f2f2f2] cursor-pointer hover:bg-[#f2f2f2] hover:font-semibold hover:scale-105 ${type === 'frontend' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : ''}`}>Frontend</div>
-                                        <div onClick={() => setType('database')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#f2f2f2] cursor-pointer hover:bg-[#f2f2f2] hover:font-semibold hover:scale-105 ${type === 'database' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : ''}`}>Database</div>
-                                        <div onClick={() => setType('aws')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#f2f2f2] cursor-pointer hover:bg-[#f2f2f2] hover:font-semibold hover:scale-105 ${type === 'aws' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : ''}`}>AWS</div>
+                                        <div onClick={() => setType('backend')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#f2f2f2] cursor-pointer hover:font-semibold hover:scale-105 ${type === 'backend' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : 'hover:bg-[#f2f2f2]'}`}>Backend</div>
+                                        <div onClick={() => setType('frontend')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#f2f2f2] cursor-pointer hover:font-semibold hover:scale-105 ${type === 'frontend' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : 'hover:bg-[#f2f2f2]'}`}>Frontend</div>
+                                        <div onClick={() => setType('database')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#f2f2f2] cursor-pointer hover:font-semibold hover:scale-105 ${type === 'database' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : 'hover:bg-[#f2f2f2]'}`}>Database</div>
+                                        <div onClick={() => setType('aws')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#f2f2f2] cursor-pointer hover:font-semibold hover:scale-105 ${type === 'aws' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : 'hover:bg-[#f2f2f2]'}`}>AWS</div>
                                     </div>
                                 </div>
                                 <div className='flex justify-center py-5'>
@@ -421,11 +421,11 @@ function Languages() {
                     </div>
                     <div className='h-full w-full lg:w-[70%] bg-[#ffffff] border-2 border-[#f2f2f2] rounded-[35px]'>
                         <div className='flex flex-col w-full h-full'>
-                            <div className=' rounded-[35px] w-full h-full p-3 flex flex-col'>
+                            <div className=' rounded-[35px] w-full h-full p-5 flex flex-col'>
                                 <div className='flex flex-1 justify-end'>
                                     <div className='gap-2 items-center flex text-sm flex-wrap'>
-                                        <div onClick={() => setWork('experience')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#f2f2f2] hover:bg-[#f2f2f2] hover:font-semibold hover:scale-105 cursor-pointer ${work === 'experience' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : ''}`}>Experience</div>
-                                        <div onClick={() => setWork('projects')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#f2f2f2] hover:bg-[#f2f2f2] hover:font-semibold hover:scale-105 cursor-pointer ${work === 'projects' ? 'bg-[#000000] text-white hover:bg-[#000000] font-semibold' : ''}`}>Projects</div>
+                                        <div onClick={() => setWork('experience')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#f2f2f2] hover:font-semibold hover:scale-105 cursor-pointer ${work === 'experience' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : 'hover:bg-[#f2f2f2]'}`}>Experience</div>
+                                        <div onClick={() => setWork('projects')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#f2f2f2] hover:font-semibold hover:scale-105 cursor-pointer ${work === 'projects' ? 'bg-[#000000] text-white hover:bg-[#000000] font-semibold' : 'hover:bg-[#f2f2f2]'}`}>Projects</div>
                                     </div>
                                 </div>
                                 {
