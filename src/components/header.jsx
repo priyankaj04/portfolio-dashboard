@@ -2,12 +2,19 @@ import Logo from './../assets/logo.png';
 
 function Header() {
     return (
-        <div className="flex flex-1 justify-between">
-            <div className='flex items-center text-2xl font-bold p-5 text-sky-400'>
-                <img src={Logo} width={50} height={50} />
-                Priyanka J
+        <div className="flex flex-1 justify-between mb-14">
+            <div className='flex items-center  font-semibold gap-3 text-2xl'>
+                Greetings! 🌟
             </div>
-            <button className='m-5 mr-10 bg-[#162350] bg-opacity-50 rounded-lg items-center p-3 font-semibold border border-[#263e8c] cursor-pointer hover:bg-[#1b2c64]'>Let's Connect</button>
+            <div className='flex items-center font-bold gap-3 text-lg'>
+                <div className='w-12 h-12 bg-[#2c2c2d] text-xl rounded-full text-center items-center flex justify-center font-extrabold text-white'>
+                    PJ
+                </div>
+                <div>
+                    <div className='text-md mb-0 font-semibold'>Priyanka J</div>
+                    <div className='text-sm mt-0 font-medium'>SDE - 1</div>
+                </div>
+            </div>
         </div>
     );
 }
