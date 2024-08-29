@@ -1,5 +1,5 @@
 import { ResponsivePieCanvas } from '@nivo/pie';
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import 'react-tooltip/dist/react-tooltip.css';
 import { Tooltip } from 'react-tooltip';
 import Mongodb from '../assets/mongodb.svg';
@@ -33,10 +33,28 @@ import lambda from '../assets/lambda.svg'
 import ses from '../assets/ses.svg'
 import sqs from '../assets/sqs.svg'
 import route53 from '../assets/route53.svg'
+import quote from '../assets/quote.svg'
+import { Player } from '@lordicon/react';
+
+const CHART = require('../assets/barchart.json');
+const CODE = require('../assets/code.json');
+const GYM = require('../assets/gym.json');
+const COFFEE = require('../assets/coffee.json');
 
 function Languages() {
     const [type, setType] = useState('backend')
     const [work, setWork] = useState('experience')
+    const playerRef = useRef(null);
+    const codeRef = useRef(null);
+    const gymRef = useRef(null);
+    const coffeeRef = useRef(null);
+
+    useEffect(() => {
+        playerRef.current?.playFromBeginning();
+        codeRef.current?.playFromBeginning();
+        gymRef.current?.playFromBeginning();
+        coffeeRef.current?.playFromBeginning();
+    }, [])
 
     const Skills = {
         backend: {
@@ -194,7 +212,7 @@ function Languages() {
             <div className='w-full flex flex-col lg:w-3/4 gap-2'>
                 <div className="w-full py-1 flex flex-col md:flex-row lg:flex-row h-1/2 gap-5">
                     <div className='flex flex-row md:flex-col lg:flex-col gap-2 lg:w-[5.5%]'>
-                        <a onClick={() => window.open('https://github.com/priyankaj04', '_blank')} id='github' className='border-2 border-[#f8f8f8] p-[13px] flex-1 flex-shrink flex items-center justify-center rounded-full cursor-pointer hover:bg-[#f8f8f8]'>
+                        <a onClick={() => window.open('https://github.com/priyankaj04', '_blank')} id='github' className='border-2 border-[#f8f8f8] p-[13px] flex-1 flex-shrink flex items-center justify-center rounded-full cursor-pointer hover:bg-[#f8f8f8] hover:scale-105'>
                             <svg
                                 width="25px"
                                 height="25px"
@@ -219,7 +237,7 @@ function Languages() {
                                 Github
                             </Tooltip>
                         </a>
-                        <a id='linkedin' onClick={() => window.open('https://www.linkedin.com/in/priyanka-j-687572213', '_blank')} className='border-2 border-[#f8f8f8] flex-1 p-[13px] flex-shrink flex items-center justify-center rounded-full cursor-pointer hover:bg-[#f8f8f8]'>
+                        <a id='linkedin' onClick={() => window.open('https://www.linkedin.com/in/priyanka-j-687572213', '_blank')} className='border-2 border-[#f8f8f8] flex-1 p-[13px] flex-shrink flex items-center justify-center rounded-full cursor-pointer hover:bg-[#f8f8f8] hover:scale-105'>
                             <svg
                                 fill="#000000"
                                 width="20px"
@@ -237,7 +255,7 @@ function Languages() {
                                 LinkedIn
                             </Tooltip>
                         </a>
-                        <a onClick={() => window.open("mailto:priyankajagadeesha10@gmail.com", "_blank")} id='mail' className='border-2 border-[#f8f8f8] flex-1 p-[13px] flex-shrink flex items-center justify-center rounded-full cursor-pointer hover:bg-[#f8f8f8]'>
+                        <a onClick={() => window.open("mailto:priyankajagadeesha10@gmail.com", "_blank")} id='mail' className='border-2 border-[#f8f8f8] flex-1 p-[13px] flex-shrink flex items-center justify-center rounded-full cursor-pointer hover:bg-[#f8f8f8] hover:scale-105'>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.2} stroke="currentColor" className="size-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                             </svg>
@@ -245,7 +263,7 @@ function Languages() {
                                 priyankajagadeesha10@gmail.com
                             </Tooltip>
                         </a>
-                        <a onClick={() => window.open("https://www.instagram.com/techtangoo/", "_blank")} id='instagram' className='border-2 border-[#f8f8f8] flex-1 p-[13px] flex-shrink flex items-center justify-center rounded-full cursor-pointer hover:bg-[#f8f8f8]'>
+                        <a onClick={() => window.open("https://www.instagram.com/techtangoo/", "_blank")} id='instagram' className='border-2 border-[#f8f8f8] flex-1 p-[13px] flex-shrink flex items-center justify-center rounded-full cursor-pointer hover:bg-[#f8f8f8] hover:scale-105'>
                             <svg
                                 width="25px"
                                 height="25px"
@@ -291,10 +309,10 @@ function Languages() {
                             <div className='bg-[#ffffff] border-2 border-[#F8F8F8] rounded-[35px] w-full h-[70%] p-5 flex flex-col gap-3'>
                                 <div>
                                     <div className='flex flex-1 gap-2 items-center text-sm flex-wrap'>
-                                        <div onClick={() => setType('backend')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#F8F8F8] cursor-pointer ${type === 'backend' ? 'bg-[#000000] text-white font-semibold' : ''}`}>Backend</div>
-                                        <div onClick={() => setType('frontend')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#F8F8F8] cursor-pointer ${type === 'frontend' ? 'bg-[#000000] text-white font-semibold' : ''}`}>Frontend</div>
-                                        <div onClick={() => setType('database')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#F8F8F8] cursor-pointer ${type === 'database' ? 'bg-[#000000] text-white font-semibold' : ''}`}>Database</div>
-                                        <div onClick={() => setType('aws')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#F8F8F8] cursor-pointer ${type === 'aws' ? 'bg-[#000000] text-white font-semibold' : ''}`}>AWS</div>
+                                        <div onClick={() => setType('backend')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#F8F8F8] cursor-pointer hover:bg-[#F8F8F8] hover:font-semibold hover:scale-105 ${type === 'backend' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : ''}`}>Backend</div>
+                                        <div onClick={() => setType('frontend')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#F8F8F8] cursor-pointer hover:bg-[#F8F8F8] hover:font-semibold hover:scale-105 ${type === 'frontend' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : ''}`}>Frontend</div>
+                                        <div onClick={() => setType('database')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#F8F8F8] cursor-pointer hover:bg-[#F8F8F8] hover:font-semibold hover:scale-105 ${type === 'database' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : ''}`}>Database</div>
+                                        <div onClick={() => setType('aws')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#F8F8F8] cursor-pointer hover:bg-[#F8F8F8] hover:font-semibold hover:scale-105 ${type === 'aws' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : ''}`}>AWS</div>
                                     </div>
                                 </div>
                                 <div className='flex justify-center py-5'>
@@ -314,7 +332,7 @@ function Languages() {
                             </div>
                             <div className='w-full px-5 py-2 flex flex-col'>
                                 <div className='flex flex-1 gap-1 items-center'>
-                                    <div className='p-3 bg-[#ffffff] rounded-full'>
+                                    <div className='p-3 bg-[#ffffff] rounded-full shake-animation hover:scale-105 cursor-pointer'>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M10.05 4.575a1.575 1.575 0 1 0-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 0 1 3.15 0v1.5m-3.15 0 .075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 0 1 3.15 0V15M6.9 7.575a1.575 1.575 0 1 0-3.15 0v8.175a6.75 6.75 0 0 0 6.75 6.75h2.018a5.25 5.25 0 0 0 3.712-1.538l1.732-1.732a5.25 5.25 0 0 0 1.538-3.712l.003-2.024a.668.668 0 0 1 .198-.471 1.575 1.575 0 1 0-2.228-2.228 3.818 3.818 0 0 0-1.12 2.687M6.9 7.575V12m6.27 4.318A4.49 4.49 0 0 1 16.35 15m.002 0h-.002" />
                                         </svg>
@@ -325,31 +343,34 @@ function Languages() {
                         </div>
                     </div>
                     <div className='h-full gap-5 w-full lg:w-[25%] flex flex-row lg:flex-col'>
-                        <div className='flex-1 h-1/2 p-5 lg:p-0 rounded-[35px] bg-[#f8f8f8] flex flex-col justify-center text-center items-center text-sm'>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
-                            </svg>
+                        <div className='flex-1 h-1/2 hover:scale-105 cursor-pointer p-5 lg:p-0 rounded-[35px] bg-[#f8f8f8] flex flex-col justify-center text-center items-center text-sm'>
+                            <Player
+                                ref={playerRef}
+                                size={28}
+                                icon={CHART}
+                                onComplete={() => playerRef.current?.playFromBeginning()}
+                            />
                             <span className='text-[#E16349] font-semibold mt-1'>RESULTS {'>>'} EFFORTS</span>I believe in
                         </div>
-                        <div className='flex-1 h-1/2 p-5 lg:p-0 rounded-[35px] bg-[#000000] flex flex-col justify-center items-center text-center text-sm text-[#D0D0D0]'>
+                        <div className='flex-1 h-1/2 p-5 hover:scale-105 cursor-pointer lg:p-0 rounded-[35px] bg-[#000000] flex flex-col justify-center items-center text-center text-sm text-[#D0D0D0]'>
                             <div className='text-[#ffffff] font-semibold text-lg'>0.1%</div>
                             <span className='text-[#E16349] font-semibold mt-1'>GROWTH</span>each & everyday
                         </div>
                     </div>
                 </div>
                 <div className="w-full py-1 flex flex-col md:flex-row lg:flex-row h-1/2 gap-5">
-                    <div className='h-full gap-5 w-full lg:w-[30%] bg-[#f8f8f8] rounded-[35px] flex flex-col'>
+                    <div className='h-full hover:scale-105 cursor-pointer gap-5 w-full lg:w-[30%] bg-[#f8f8f8] rounded-[35px] flex flex-col'>
                         <div className='flex-1 h-1/2 p-5 lg:p-0 rounded-[35px] bg-[#f8f8f8] flex flex-col text-sm'>
-                            <div className='p-5 flex flex-col justify-between h-full'>
+                            <div className='p-5 flex flex-col justify-between  h-full'>
                                 <div className='flex items-center gap-2'>
-                                    <div className='bg-[#ffffff] p-2 rounded-full'>
+                                    <div className='bg-[#ffffff] p-2 rounded-full shake-animation hover:scale-105 cursor-pointer'>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
                                         </svg>
                                     </div>
                                     Education
                                 </div>
-                                <div className='flex flex-col gap-4'>
+                                <div className='flex flex-col h-full justify-evenly'>
                                     <div>
                                         <p className='font-semibold text-sm'>BCA<span className='text-xs font-light'>(9.1/10)</span></p>
                                         <div className='flex flex-1 justify-between text-xs text-[#808080]'>
@@ -380,13 +401,13 @@ function Languages() {
                             <div className=' rounded-[35px] w-full h-full p-3 flex flex-col'>
                                 <div className='flex flex-1 justify-end'>
                                     <div className='gap-2 items-center flex text-sm flex-wrap'>
-                                        <div onClick={() => setWork('experience')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#F8F8F8] cursor-pointer ${work === 'experience' ? 'bg-[#000000] text-white font-semibold' : ''}`}>Experience</div>
-                                        <div onClick={() => setWork('projects')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#F8F8F8] cursor-pointer ${work === 'projects' ? 'bg-[#000000] text-white font-semibold' : ''}`}>Projects</div>
+                                        <div onClick={() => setWork('experience')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#F8F8F8] hover:bg-[#F8F8F8] hover:font-semibold hover:scale-105 cursor-pointer ${work === 'experience' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : ''}`}>Experience</div>
+                                        <div onClick={() => setWork('projects')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#F8F8F8] hover:bg-[#F8F8F8] hover:font-semibold hover:scale-105 cursor-pointer ${work === 'projects' ? 'bg-[#000000] text-white hover:bg-[#000000] font-semibold' : ''}`}>Projects</div>
                                     </div>
                                 </div>
                                 {
                                     work === 'experience' ?
-                                        <div className='flex flex-col gap-2'>
+                                        <div className='flex flex-col gap-2 h-full justify-evenly'>
                                             <div>
                                                 <p className='text-[#E16349] font-semibold text-xl'>Circle Health</p>
                                                 <p className='text-sm'>Software Engineer - Bengaluru</p>
@@ -396,7 +417,7 @@ function Languages() {
                                             <p className='text-sm'>As a lead developer at Circle Health, I oversee the architecture and development of top-tier SaaS products, managing databases, deploying to CICD, and ensuring the security and scalability of our offerings.</p>
                                         </div> : work === 'projects' ?
                                             <div className='flex flex-col md:flex-row lg:flex-row gap-5 mt-5 h-full'>
-                                                <a id='wacommtitle' className='flex-1 flex flex-col gap-3 bg-[#F8F8F8] p-5 h-full rounded-[35px]'>
+                                                <a id='wacommtitle' className='flex-1 hover:scale-105 cursor-pointer  flex flex-col gap-3 bg-[#F8F8F8] p-5 h-full rounded-[35px]'>
                                                     <div className='flex flex-1 justify-between items-center'>
                                                         <p className='text-[#E16349] font-bold'>WACOMM</p>
                                                         <a onClick={() => window.open('https://github.com/priyankaj04', '_blank')} id='githubproj1' className='cursor-pointer p-2 bg-white rounded-full flex justify-center items-center'>
@@ -429,7 +450,7 @@ function Languages() {
                                                 <Tooltip anchorSelect="#wacommtitle" place="top">
                                                     Whatsapp Communication System
                                                 </Tooltip>
-                                                <div id="crmstitle" className='flex-1 flex flex-col gap-3 border-2 border-[#F8F8F8] p-5 h-full rounded-[35px]'>
+                                                <div id="crmstitle" className='flex-1 hover:scale-105 cursor-pointer flex flex-col gap-3 border-2 border-[#F8F8F8] p-5 h-full rounded-[35px]'>
                                                     <div className='flex flex-1 justify-between items-center'>
                                                         <p className='text-[#E16349] font-bold'>CRMS</p>
                                                         <a onClick={() => window.open('https://github.com/priyankaj04/CampusRecruitmentApp', '_blank')} id='crmsgithub' className='cursor-pointer p-2 bg-[#f8f8f8] rounded-full flex justify-center items-center'>
@@ -462,7 +483,7 @@ function Languages() {
                                                 <Tooltip anchorSelect="#crmstitle" place="top">
                                                     Campus Recruitment Management System
                                                 </Tooltip>
-                                                <div id="blogtitle" className='flex-1 flex flex-col gap-3 bg-[#F8F8F8] p-5 h-full rounded-[35px]'>
+                                                <div id="blogtitle" className='flex-1 hover:scale-105 cursor-pointer flex flex-col gap-3 bg-[#F8F8F8] p-5 h-full rounded-[35px]'>
                                                     <div className='flex flex-1 justify-between items-center'>
                                                         <p className='text-[#E16349] font-bold'>Balanced-Blog</p>
                                                         <a onClick={() => window.open('https://github.com/priyankaj04/Graph-CMS-Blog', '_blank')} id='bloggithub' className='cursor-pointer p-2 bg-white rounded-full flex justify-center items-center'>
@@ -503,22 +524,53 @@ function Languages() {
                 </div>
             </div>
             <div className="flex-shrink w-full lg:w-1/4 flex flex-col gap-3">
-                <div className='w-full p-5 h-1/4 rounded-[35px] bg-[#E16349] text-white flex flex-col justify-center text-center items-center text-md font-bold italic'>
-                    “A good programmer is someone who always looks both ways before crossing a one-way street.”
+                <div className='w-full hover:scale-105 cursor-pointer p-5 h-1/4 rounded-[35px] bg-[#E16349] text-white flex flex-col justify-center text-center items-center text-md font-bold italic'>
+                    <img src={quote} className='w-10 h-10' />
+                    A good programmer is someone who always looks both ways before crossing a one-way street.
                 </div>
                 <div className='h-1/4  flex gap-5'>
-                    <div className='flex flex-col rounded-[35px] text-xl font-black italic bg-[#ffffff] border-2 border-[#F8F8F8] p-5'>
+                    <div className='flex flex-1 hover:scale-105 cursor-pointer justify-center flex-col rounded-[35px] text-xl font-black italic bg-[#ffffff] border-2 border-[#F8F8F8] p-5'>
                         <span className='text-[#E16349]'>CREATIVITY</span>
                         ADAPTABILITY<br></br>
                         <span className='text-[#808080]'>PATIENCE</span>
                     </div>
-                    <div className='flex flex-col rounded-[35px] flex-grow text-lg font-bold bg-[#f8f8f8] p-5 italic'>
-                        CODE<br></br>
-                        <p className='text-[#808080]'>GYM</p>
-                        <p className='text-[#E16349]'>COFFEE</p>
+                    <div className='flex flex-1 hover:scale-105 cursor-pointer flex-col justify-center rounded-[35px] text-md font-semibold bg-[#f8f8f8] p-5'>
+                        <div className='flex flex-1 items-center gap-3'>
+                            <div>
+                                <Player
+                                    ref={codeRef}
+                                    size={30}
+                                    icon={CODE}
+                                    onComplete={() => codeRef.current?.playFromBeginning()}
+                                />
+                            </div>
+                            CODE
+                        </div>
+                        <div className='flex flex-1 items-center gap-3 text-[#808080]'>
+                            <div>
+                                <Player
+                                    ref={gymRef}
+                                    size={30}
+                                    icon={GYM}
+                                    onComplete={() => gymRef.current?.playFromBeginning()}
+                                />
+                            </div>
+                            GYM
+                        </div>
+                        <div className='flex flex-1 items-center gap-3 text-[#E16349]'>
+                            <div>
+                                <Player
+                                    ref={coffeeRef}
+                                    size={30}
+                                    icon={COFFEE}
+                                    onComplete={() => coffeeRef.current?.playFromBeginning()}
+                                />
+                            </div>
+                            COFFEE
+                        </div>
                     </div>
                 </div>
-                <div className='p-5 h-2/4 rounded-[35px] bg-[#f8f8f8] flex flex-col justify-between'>
+                <div className='p-5 hover:scale-105 cursor-pointer h-2/4 rounded-[35px] bg-[#f8f8f8] flex flex-col justify-evenly'>
                     <span className='text-sm'>That's it!!!</span>
                     <span className='text-lg'>I love experimenting! letting my curiosity lead the way to create something extraordinary.</span>
                     <span className='text-[#E16349] font-bold text-xl'>Thankyou! Hoping this was worth your time :)</span>
