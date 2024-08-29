@@ -28,7 +28,7 @@ function HeaderBox() {
                     <div className='text-md mt-0 font-semibold'>experience</div>
                 </div>
                 <div className="border-r border-r-[#D0D0D0] h-10 justify-self-center items-center self-center mx-3"></div>
-                <a href="https://drive.google.com/file/d/1TO4qzkUKhjV5YByTJDdjrLcXdANZlB_h/view?usp=sharing" target='_blank' className="hidden gap-3 md:flex lg:flex text-sm justify-center items-center px-5 py-4 bg-[#E16349] font-semibold rounded-full text-[#fcfcfc] cursor-pointer hover:scale-105 hover:font-bold">
+                <a href="https://drive.google.com/file/d/1ZfvzM7y2CBByT4XyprOP_G-iyfTG3cvf/view?usp=sharing" target='_blank' className="hidden gap-3 md:flex lg:flex text-sm justify-center items-center px-5 py-4 bg-[#E16349] font-semibold rounded-full text-[#fcfcfc] cursor-pointer hover:scale-105 hover:font-bold">
                     View Resume  <Player
                         ref={playerRef}
                         size={26}
