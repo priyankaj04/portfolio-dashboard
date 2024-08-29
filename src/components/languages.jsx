@@ -39,6 +39,7 @@ const CHART = require('../assets/barchart.json');
 const CODE = require('../assets/code.json');
 const GYM = require('../assets/gym.json');
 const COFFEE = require('../assets/coffee.json');
+const BRIEFCASE = require('../assets/brifecase.json');
 
 function Languages() {
     const [type, setType] = useState('backend')
@@ -47,12 +48,14 @@ function Languages() {
     const codeRef = useRef(null);
     const gymRef = useRef(null);
     const coffeeRef = useRef(null);
+    const briefRef = useRef(null);
 
     useEffect(() => {
         playerRef.current?.playFromBeginning();
         codeRef.current?.playFromBeginning();
         gymRef.current?.playFromBeginning();
         coffeeRef.current?.playFromBeginning();
+        briefRef.current?.playFromBeginning();
     }, [])
 
     const Skills = {
@@ -408,7 +411,17 @@ function Languages() {
                                     work === 'experience' ?
                                         <div className='flex flex-col gap-2 h-full justify-evenly'>
                                             <div>
-                                                <p className='text-[#E16349] font-semibold text-xl'>Circle Health</p>
+                                                <div className='flex flex-1 items-center gap-3 text-[#E16349] font-semibold text-xl'>
+                                                    <div className="p-2 bg-[#f8f8f8] rounded-full">
+                                                        <Player
+                                                            ref={briefRef}
+                                                            size={22}
+                                                            icon={BRIEFCASE}
+                                                            onComplete={() => briefRef.current?.playFromBeginning()}
+                                                        />
+                                                    </div>
+                                                    Circle Health
+                                                </div>
                                                 <p className='text-sm'>Software Engineer - Bengaluru</p>
                                                 <p className='text-xs font-normal text-[#808080]'>Sept-2023 - Present | Intern: Oct-2022 - Jul-2023</p>
                                             </div>
