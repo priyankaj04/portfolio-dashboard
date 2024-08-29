@@ -40,6 +40,10 @@ const CODE = require('../assets/code.json');
 const GYM = require('../assets/gym.json');
 const COFFEE = require('../assets/coffee.json');
 const BRIEFCASE = require('../assets/brifecase.json');
+const WACOMM = require('../assets/wacomm.json');
+const BLOG = require('../assets/blog.json');
+const GROWTH = require('../assets/growth.json');
+const MOBILE = require('../assets/mobile.json');
 
 function Languages() {
     const [type, setType] = useState('backend')
@@ -49,6 +53,10 @@ function Languages() {
     const gymRef = useRef(null);
     const coffeeRef = useRef(null);
     const briefRef = useRef(null);
+    const wacommRef = useRef(null);
+    const blogRef = useRef(null);
+    const growthRef = useRef(null);
+    const mobileRef = useRef(null);
 
     useEffect(() => {
         playerRef.current?.playFromBeginning();
@@ -56,6 +64,10 @@ function Languages() {
         gymRef.current?.playFromBeginning();
         coffeeRef.current?.playFromBeginning();
         briefRef.current?.playFromBeginning();
+        wacommRef.current?.playFromBeginning();
+        blogRef.current?.playFromBeginning();
+        growthRef.current?.playFromBeginning();
+        mobileRef.current?.playFromBeginning();
     }, [])
 
     const Skills = {
@@ -354,9 +366,15 @@ function Languages() {
                             />
                             <span className='text-[#E16349] font-semibold mt-1'>RESULTS {'>>'} EFFORTS</span>I believe in
                         </div>
-                        <div className='flex-1 h-1/2 p-5 hover:scale-105 cursor-pointer lg:p-0 rounded-[35px] bg-[#000000] flex flex-col justify-center items-center text-center text-sm text-[#D0D0D0]'>
-                            <div className='text-[#ffffff] font-semibold text-lg'>0.1%</div>
-                            <span className='text-[#E16349] font-semibold mt-1'>GROWTH</span>each & everyday
+                        <div className='flex-1 h-1/2 p-5 hover:scale-105 cursor-pointer lg:p-0 rounded-[35px] bg-[#000000] flex flex-col justify-center items-center text-center text-sm text-[#E16349]'>
+                            <Player
+                                ref={growthRef}
+                                size={28}
+                                icon={GROWTH}
+                                onComplete={() => growthRef.current?.playFromBeginning()}
+                            />
+                            <div className='text-[#ffffff] font-semibold text-lg'>0.1% GROWTH</div>
+                            each & everyday
                         </div>
                     </div>
                 </div>
@@ -431,7 +449,15 @@ function Languages() {
                                             <div className='flex flex-col md:flex-row lg:flex-row gap-5 mt-5 h-full'>
                                                 <a id='wacommtitle' className='flex-1 hover:scale-105 cursor-pointer  flex flex-col gap-3 bg-[#F8F8F8] p-5 h-full rounded-[35px]'>
                                                     <div className='flex flex-1 justify-between items-center'>
-                                                        <p className='text-[#E16349] font-bold'>WACOMM</p>
+                                                        <div className='flex flex-1 items-center gap-1 text-[#E16349] font-bold'>
+                                                            <Player
+                                                                ref={wacommRef}
+                                                                size={30}
+                                                                icon={WACOMM}
+                                                                onComplete={() => wacommRef.current?.playFromBeginning()}
+                                                            />
+                                                            WACOMM
+                                                        </div>
                                                         <a onClick={() => window.open('https://github.com/priyankaj04', '_blank')} id='githubproj1' className='cursor-pointer p-2 bg-white rounded-full flex justify-center items-center'>
                                                             <svg
                                                                 width="25px"
@@ -464,7 +490,15 @@ function Languages() {
                                                 </Tooltip>
                                                 <div id="crmstitle" className='flex-1 hover:scale-105 cursor-pointer flex flex-col gap-3 border-2 border-[#F8F8F8] p-5 h-full rounded-[35px]'>
                                                     <div className='flex flex-1 justify-between items-center'>
-                                                        <p className='text-[#E16349] font-bold'>CRMS</p>
+                                                        <div className='flex flex-1 items-center gap-1 text-[#E16349] font-bold'>
+                                                            <Player
+                                                                ref={mobileRef}
+                                                                size={30}
+                                                                icon={MOBILE}
+                                                                onComplete={() => mobileRef.current?.playFromBeginning()}
+                                                            />
+                                                            CRMS
+                                                        </div>
                                                         <a onClick={() => window.open('https://github.com/priyankaj04/CampusRecruitmentApp', '_blank')} id='crmsgithub' className='cursor-pointer p-2 bg-[#f8f8f8] rounded-full flex justify-center items-center'>
                                                             <svg
                                                                 width="25px"
@@ -497,7 +531,15 @@ function Languages() {
                                                 </Tooltip>
                                                 <div id="blogtitle" className='flex-1 hover:scale-105 cursor-pointer flex flex-col gap-3 bg-[#F8F8F8] p-5 h-full rounded-[35px]'>
                                                     <div className='flex flex-1 justify-between items-center'>
-                                                        <p className='text-[#E16349] font-bold'>Balanced-Blog</p>
+                                                        <div className='flex flex-1 items-center gap-1 text-[#E16349] font-bold'>
+                                                            <Player
+                                                                ref={blogRef}
+                                                                size={30}
+                                                                icon={BLOG}
+                                                                onComplete={() => blogRef.current?.playFromBeginning()}
+                                                            />
+                                                            BaLanced-Blog
+                                                        </div>
                                                         <a onClick={() => window.open('https://github.com/priyankaj04/Graph-CMS-Blog', '_blank')} id='bloggithub' className='cursor-pointer p-2 bg-white rounded-full flex justify-center items-center'>
                                                             <svg
                                                                 width="25px"
