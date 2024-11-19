@@ -34,6 +34,7 @@ import sqs from '../assets/sqs.svg'
 import route53 from '../assets/route53.svg'
 import quote from '../assets/quote.svg'
 import { Player } from '@lordicon/react';
+import Projects from "./project";
 
 const CHART = require('../assets/barchart.json');
 const CODE = require('../assets/code.json');
@@ -118,7 +119,7 @@ function Languages() {
                     name: 'Docker'
                 }
             ],
-            rating: 'I can build secure and effecient backend by following OWASP coding practices and also by writing neat, clean and maintainable code.'
+            rating: 'Where the magic happens behind the scenes. Building secure, scalable foundations.'
         },
         frontend: {
             icons: [
@@ -155,7 +156,7 @@ function Languages() {
                     name: 'ShadCN'
                 }
             ],
-            rating: 'I can build clean, neat and decent looking frontend with good ux! "UX > UI"'
+            rating: 'Crafting delightful user experiences.Transforming ideas into engaging interfaces.'
         },
         database: {
             icons: [
@@ -176,7 +177,7 @@ function Languages() {
                     name: 'MongoDB'
                 }
             ],
-            rating: 'I can design - secure and scalable database architecture with correct relationships and types!'
+            rating: 'Empowering data-driven decision-making. Efficiently managing and querying the heart of applications.'
         },
         aws: {
             icons: [
@@ -217,7 +218,7 @@ function Languages() {
                     name: 'Route53'
                 }
             ],
-            rating: 'I can deploy and maintain a full-stack application in the AWS!'
+            rating: 'Hosting smarter, scaling faster. Seamlessly deploying to the cloud.'
         },
     }
 
@@ -226,7 +227,7 @@ function Languages() {
             <div className='w-full flex flex-col lg:w-3/4 gap-2'>
                 <div className="w-full py-1 flex flex-col md:flex-row lg:flex-row h-1/2 gap-5">
                     <div className='flex flex-row md:flex-col lg:flex-col gap-2 lg:w-[5.5%]'>
-                        <a onClick={() => window.open('https://github.com/priyankaj04', '_blank')} id='github' className='border-2 border-[#f2f2f2] p-[13px] flex-1 flex-shrink flex items-center justify-center rounded-full cursor-pointer hover:bg-[#f2f2f2] hover:scale-105'>
+                        <a onClick={() => window.open('https://github.com/priyankaj04', '_blank')} id='github' className='border-2 border-[#eaeaea] p-[13px] flex-1 flex-shrink flex items-center justify-center rounded-full cursor-pointer hover:bg-[#eaeaea] hover:scale-105'>
                             <svg
                                 width="25px"
                                 height="25px"
@@ -252,7 +253,7 @@ function Languages() {
                         <Tooltip anchorSelect="#github" place="right">
                             Github
                         </Tooltip>
-                        <a id='linkedin' onClick={() => window.open('https://www.linkedin.com/in/priyanka-j-687572213', '_blank')} className='border-2 border-[#f2f2f2] flex-1 p-[13px] flex-shrink flex items-center justify-center rounded-full cursor-pointer hover:bg-[#f2f2f2] hover:scale-105'>
+                        <a id='linkedin' onClick={() => window.open('https://www.linkedin.com/in/priyanka-j-687572213', '_blank')} className='border-2 border-[#eaeaea] flex-1 p-[13px] flex-shrink flex items-center justify-center rounded-full cursor-pointer hover:bg-[#eaeaea] hover:scale-105'>
                             <svg
                                 fill="#000000"
                                 width="20px"
@@ -271,7 +272,7 @@ function Languages() {
                         <Tooltip anchorSelect="#linkedin" place="right">
                             LinkedIn
                         </Tooltip>
-                        <a onClick={() => window.open("mailto:priyankajagadeesha10@gmail.com", "_blank")} id='mail' className='border-2 border-[#f2f2f2] flex-1 p-[13px] flex-shrink flex items-center justify-center rounded-full cursor-pointer hover:bg-[#f2f2f2] hover:scale-105'>
+                        <a onClick={() => window.open("mailto:priyankajagadeesha10@gmail.com", "_blank")} id='mail' className='border-2 border-[#eaeaea] flex-1 p-[13px] flex-shrink flex items-center justify-center rounded-full cursor-pointer hover:bg-[#eaeaea] hover:scale-105'>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.2} stroke="currentColor" className="size-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                             </svg>
@@ -280,7 +281,7 @@ function Languages() {
                         <Tooltip anchorSelect="#mail" place="right">
                             priyankajagadeesha10@gmail.com
                         </Tooltip>
-                        <a onClick={() => window.open("https://www.instagram.com/techtangoo/", "_blank")} id='instagram' className='border-2 border-[#f2f2f2] flex-1 p-[13px] flex-shrink flex items-center justify-center rounded-full cursor-pointer hover:bg-[#f2f2f2] hover:scale-105'>
+                        <a onClick={() => window.open("https://www.instagram.com/techtangoo/", "_blank")} id='instagram' className='border-2 border-[#eaeaea] flex-1 p-[13px] flex-shrink flex items-center justify-center rounded-full cursor-pointer hover:bg-[#eaeaea] hover:scale-105'>
                             <svg
                                 width="25px"
                                 height="25px"
@@ -321,15 +322,15 @@ function Languages() {
                             Techtangoo
                         </Tooltip>
                     </div>
-                    <div className='h-full w-full lg:w-[70%] bg-[#f2f2f2] rounded-[35px]'>
+                    <div className='h-full w-full lg:w-[70%] bg-[#eaeaea] rounded-[35px]'>
                         <div className='flex flex-col w-full h-full'>
-                            <div className='bg-[#ffffff] border-2 border-[#f2f2f2] rounded-[35px] w-full h-[70%] p-5 flex flex-col gap-3'>
+                            <div className='bg-[#ffffff] border-2 border-[#eaeaea] rounded-[35px] w-full h-[70%] p-5 flex flex-col gap-3'>
                                 <div>
                                     <div className='flex flex-1 gap-2 items-center text-sm flex-wrap'>
-                                        <div onClick={() => setType('backend')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#f2f2f2] cursor-pointer hover:font-semibold hover:scale-105 ${type === 'backend' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : 'hover:bg-[#f2f2f2]'}`}>Backend</div>
-                                        <div onClick={() => setType('frontend')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#f2f2f2] cursor-pointer hover:font-semibold hover:scale-105 ${type === 'frontend' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : 'hover:bg-[#f2f2f2]'}`}>Frontend</div>
-                                        <div onClick={() => setType('database')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#f2f2f2] cursor-pointer hover:font-semibold hover:scale-105 ${type === 'database' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : 'hover:bg-[#f2f2f2]'}`}>Database</div>
-                                        <div onClick={() => setType('aws')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#f2f2f2] cursor-pointer hover:font-semibold hover:scale-105 ${type === 'aws' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : 'hover:bg-[#f2f2f2]'}`}>AWS</div>
+                                        <div onClick={() => setType('backend')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#eaeaea] cursor-pointer hover:font-semibold hover:scale-105 ${type === 'backend' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : 'hover:bg-[#eaeaea]'}`}>Backend</div>
+                                        <div onClick={() => setType('frontend')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#eaeaea] cursor-pointer hover:font-semibold hover:scale-105 ${type === 'frontend' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : 'hover:bg-[#eaeaea]'}`}>Frontend</div>
+                                        <div onClick={() => setType('database')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#eaeaea] cursor-pointer hover:font-semibold hover:scale-105 ${type === 'database' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : 'hover:bg-[#eaeaea]'}`}>Database</div>
+                                        <div onClick={() => setType('aws')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#eaeaea] cursor-pointer hover:font-semibold hover:scale-105 ${type === 'aws' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : 'hover:bg-[#eaeaea]'}`}>AWS</div>
                                     </div>
                                 </div>
                                 <div className='flex justify-center py-5'>
@@ -360,14 +361,14 @@ function Languages() {
                         </div>
                     </div>
                     <div className='h-full gap-5 w-full lg:w-[25%] flex flex-row lg:flex-col'>
-                        <div className='flex-1 h-1/2 hover:scale-105 cursor-pointer p-5 lg:p-0 rounded-[35px] bg-[#f2f2f2] flex flex-col justify-center text-center items-center text-sm'>
+                        <div className='flex-1 h-1/2 hover:scale-105 cursor-pointer p-5 lg:p-0 rounded-[35px] bg-[#eaeaea] flex flex-col justify-center text-center items-center text-sm'>
                             <Player
                                 ref={playerRef}
                                 size={28}
                                 icon={CHART}
                                 onComplete={() => playerRef.current?.playFromBeginning()}
                             />
-                            <span className='text-[#E16349] font-semibold mt-1'>RESULTS {'>>'} EFFORTS</span>I believe in
+                            <span className='text-[#E16349] font-semibold mt-1'>Progress</span>over Perfection
                         </div>
                         <div className='flex-1 h-1/2 p-5 hover:scale-105 cursor-pointer lg:p-0 rounded-[35px] bg-[#000000] flex flex-col justify-center items-center text-center text-sm text-[#E16349]'>
                             <Player
@@ -376,14 +377,14 @@ function Languages() {
                                 icon={GROWTH}
                                 onComplete={() => growthRef.current?.playFromBeginning()}
                             />
-                            <div className='text-[#ffffff] font-semibold text-lg'>0.1% GROWTH</div>
-                            each & everyday
+                            <div className='text-[#ffffff] font-semibold text-lg'>Chasing Excellence</div>
+                            One Step at a Time
                         </div>
                     </div>
                 </div>
                 <div className="w-full py-1 flex flex-col md:flex-row lg:flex-row h-1/2 gap-5">
-                    <div className='h-full hover:scale-105 cursor-pointer gap-5 w-full lg:w-[30%] bg-[#f2f2f2] rounded-[35px] flex flex-col'>
-                        <div className='flex-1 h-1/2 p-5 lg:p-0 rounded-[35px] bg-[#f2f2f2] flex flex-col text-sm'>
+                    <div className='h-full hover:scale-105 cursor-pointer gap-5 w-full lg:w-[30%] bg-[#eaeaea] rounded-[35px] flex flex-col'>
+                        <div className='flex-1 h-1/2 p-5 lg:p-0 rounded-[35px] bg-[#eaeaea] flex flex-col text-sm'>
                             <div className='p-5 flex flex-col justify-between  h-full'>
                                 <div className='flex items-center gap-2'>
                                     <div className='bg-[#ffffff] p-2 rounded-full shake-animation hover:scale-105 cursor-pointer'>
@@ -419,13 +420,13 @@ function Languages() {
                             </div>
                         </div>
                     </div>
-                    <div className='h-full w-full lg:w-[70%] bg-[#ffffff] border-2 border-[#f2f2f2] rounded-[35px]'>
+                    {/* <div className='h-full w-full lg:w-[70%] bg-[#ffffff] border-2 border-[#eaeaea] rounded-[35px]'>
                         <div className='flex flex-col w-full h-full'>
                             <div className=' rounded-[35px] w-full h-full p-5 flex flex-col'>
                                 <div className='flex flex-1 justify-end'>
                                     <div className='gap-2 items-center flex text-sm flex-wrap'>
-                                        <div onClick={() => setWork('experience')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#f2f2f2] hover:font-semibold hover:scale-105 cursor-pointer ${work === 'experience' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : 'hover:bg-[#f2f2f2]'}`}>Experience</div>
-                                        <div onClick={() => setWork('projects')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#f2f2f2] hover:font-semibold hover:scale-105 cursor-pointer ${work === 'projects' ? 'bg-[#000000] text-white hover:bg-[#000000] font-semibold' : 'hover:bg-[#f2f2f2]'}`}>Projects</div>
+                                        <div onClick={() => setWork('experience')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#eaeaea] hover:font-semibold hover:scale-105 cursor-pointer ${work === 'experience' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : 'hover:bg-[#eaeaea]'}`}>Experience</div>
+                                        <div onClick={() => setWork('projects')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#eaeaea] hover:font-semibold hover:scale-105 cursor-pointer ${work === 'projects' ? 'bg-[#000000] text-white hover:bg-[#000000] font-semibold' : 'hover:bg-[#eaeaea]'}`}>Projects</div>
                                     </div>
                                 </div>
                                 {
@@ -433,7 +434,7 @@ function Languages() {
                                         <div className='flex flex-col gap-2 h-full justify-evenly'>
                                             <div>
                                                 <div className='flex flex-1 items-center gap-3 text-[#E16349] font-semibold text-xl'>
-                                                    <div className="p-2 bg-[#f2f2f2] rounded-full">
+                                                    <div className="p-2 bg-[#eaeaea] rounded-full">
                                                         <Player
                                                             ref={briefRef}
                                                             size={22}
@@ -450,7 +451,7 @@ function Languages() {
                                             <p className='text-sm'>As a lead developer at Circle Health, I oversee the architecture and development of top-tier SaaS products, managing databases, deploying to CICD, and ensuring the security and scalability of our offerings.</p>
                                         </div> : work === 'projects' ?
                                             <div className='flex flex-col md:flex-row lg:flex-row gap-5 mt-5 h-full'>
-                                                <a id='wacommtitle' className='flex-1 hover:scale-105 cursor-pointer  flex flex-col gap-3 bg-[#f2f2f2] p-5 h-full rounded-[35px]'>
+                                                <a id='wacommtitle' className='flex-1 hover:scale-105 cursor-pointer  flex flex-col gap-3 bg-[#eaeaea] p-5 h-full rounded-[35px]'>
                                                     <div className='flex flex-1 justify-between items-center'>
                                                         <div className='flex flex-1 items-center gap-1 text-[#E16349] font-bold'>
                                                             <Player
@@ -491,7 +492,7 @@ function Languages() {
                                                 <Tooltip anchorSelect="#wacommtitle" place="top">
                                                     Whatsapp Communication System
                                                 </Tooltip>
-                                                <div id="crmstitle" className='flex-1 hover:scale-105 cursor-pointer flex flex-col gap-3 border-2 border-[#f2f2f2] p-5 h-full rounded-[35px]'>
+                                                <div id="crmstitle" className='flex-1 hover:scale-105 cursor-pointer flex flex-col gap-3 border-2 border-[#eaeaea] p-5 h-full rounded-[35px]'>
                                                     <div className='flex flex-1 justify-between items-center'>
                                                         <div className='flex flex-1 items-center gap-1 text-[#E16349] font-bold'>
                                                             <Player
@@ -502,7 +503,7 @@ function Languages() {
                                                             />
                                                             CRMS
                                                         </div>
-                                                        <a onClick={() => window.open('https://github.com/priyankaj04/CampusRecruitmentApp', '_blank')} id='crmsgithub' className='cursor-pointer p-2 bg-[#f2f2f2] rounded-full flex justify-center items-center'>
+                                                        <a onClick={() => window.open('https://github.com/priyankaj04/CampusRecruitmentApp', '_blank')} id='crmsgithub' className='cursor-pointer p-2 bg-[#eaeaea] rounded-full flex justify-center items-center'>
                                                             <svg
                                                                 width="25px"
                                                                 height="25px"
@@ -532,7 +533,7 @@ function Languages() {
                                                 <Tooltip anchorSelect="#crmstitle" place="top">
                                                     Campus Recruitment Management System
                                                 </Tooltip>
-                                                <div id="blogtitle" className='flex-1 hover:scale-105 cursor-pointer flex flex-col gap-3 bg-[#f2f2f2] p-5 h-full rounded-[35px]'>
+                                                <div id="blogtitle" className='flex-1 hover:scale-105 cursor-pointer flex flex-col gap-3 bg-[#eaeaea] p-5 h-full rounded-[35px]'>
                                                     <div className='flex flex-1 justify-between items-center'>
                                                         <div className='flex flex-1 items-center gap-1 text-[#E16349] font-bold'>
                                                             <Player
@@ -577,7 +578,8 @@ function Languages() {
                                 }
                             </div>
                         </div>
-                    </div>
+                    </div> */}
+                    <Projects />
                 </div>
             </div>
             <div className="flex-shrink w-full lg:w-1/4 flex flex-col gap-3">
@@ -586,12 +588,12 @@ function Languages() {
                     A good programmer is someone who always looks both ways before crossing a one-way street.
                 </div>
                 <div className='h-1/4  flex gap-5'>
-                    <div className='flex flex-1 hover:scale-105 cursor-pointer justify-center flex-col rounded-[35px] text-xl font-black italic bg-[#ffffff] border-2 border-[#f2f2f2] p-5'>
-                        <span className='text-[#E16349]'>CREATIVITY</span>
-                        ADAPTABILITY<br></br>
-                        <span className='text-[#808080]'>PATIENCE</span>
+                    <div className='flex flex-1 hover:scale-105 cursor-pointer justify-center flex-col rounded-[35px] text-xl font-extrabold italic bg-[#ffffff] border-2 border-[#eaeaea] p-5'>
+                        <span className='text-[#E16349]'>Dream big.</span>
+                        Start small.<br></br>
+                        <span className='text-[#808080]'>Scale fast.</span>
                     </div>
-                    <div className='flex flex-1 hover:scale-105 cursor-pointer flex-col justify-center rounded-[35px] text-md font-semibold bg-[#f2f2f2] p-5'>
+                    <div className='flex flex-1 hover:scale-105 cursor-pointer flex-col justify-center rounded-[35px] text-md font-semibold bg-[#eaeaea] p-5'>
                         <div className='flex flex-1 items-center gap-3'>
                             <div>
                                 <Player
@@ -627,10 +629,10 @@ function Languages() {
                         </div>
                     </div>
                 </div>
-                <div className='p-5 hover:scale-105 cursor-pointer h-2/4 rounded-[35px] bg-[#f2f2f2] flex flex-col justify-evenly'>
-                    <span className='text-sm'>That's it!!!</span>
-                    <span className='text-lg'>I love experimenting! letting my curiosity lead the way to create something extraordinary.</span>
-                    <span className='text-[#E16349] font-bold text-xl'>Thankyou! Hoping this was worth your time :)</span>
+                <div className='p-5 hover:scale-105 cursor-pointer h-2/4 rounded-[35px] bg-[#eaeaea] flex flex-col justify-evenly'>
+                    <span className='text-sm font-semibold'>That’s my story so far!</span>
+                    <span className='text-md'>I’m passionate about building meaningful tech and constantly learning along the way. Ready to build something extraordinary together?</span>
+                    <span className='text-[#E16349] font-semibold text-md'>Thank you for visiting! Let's create something impactful and extraordinary!</span>
                 </div>
             </div>
         </div>
