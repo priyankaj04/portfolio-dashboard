@@ -23,6 +23,7 @@ const Projects = () => {
             title: "Circle Health",
             description: "Software Engineer",
             tooltip: "Software Engineer",
+            date: '2022-10 - 2023-08 as Intern, 2023-09 - Present',
             techStack: ["MERN Stack", "PostgreSQL", "AWS", "FastAPI", "GeminiAPI", "React Native", "MUI", "Tailwind CSS", "ShadCN"],
             description1: <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
                 {/* Summary Section */}
@@ -343,6 +344,7 @@ const Projects = () => {
                             <h2 className="text-black font-semibold text-2xl">
                                 {selectedProject.tooltip}
                             </h2>
+                            {selectedProject.date && <p className="text-[#555] text-sm">{selectedProject.date}</p>}
                             {/* Tech Stack */}
                             <div className="flex gap-2 flex-wrap">
                                 {selectedProject.techStack?.map((tech) => (
