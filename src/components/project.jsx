@@ -1,178 +1,151 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Modal from "react-modal";
+import { Player } from '@lordicon/react';
+import Xletter from '../assets/x-letter.svg'
 
 Modal.setAppElement("#root"); // To avoid accessibility warning
+const BRIEFCASE = require('../assets/brifecase.json');
 
 const Projects = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [openWork, setOpenWork] = useState(false);
     const [selectedProject, setSelectedProject] = useState(null);
-    const scrollRef = useRef(null);
-    const scrollLeft = () => {
-        scrollRef.current.scrollBy({ left: -300, behavior: "smooth" });
-    };
+    const briefRef = useRef(null);
 
-    const scrollRight = () => {
-        scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
-    };
+    useEffect(() => {
+        briefRef.current?.playFromBeginning();
+    }, [])
 
+    const work = {
+        type: "work",
+        title: "Circle Health",
+        description: "Software Engineer",
+        tooltip: "Software Engineer",
+        date: '09-2023 - Present, Intership: 10-2022 - 07-2023',
+        description1: <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+            {/* Summary Section */}
+            <section className="mb-6">
+                <h2 className="text-lg font-semibold border-b pb-2 mb-4 text-[#E16349]">Key Responsibilities</h2>
+                <ul className="list-disc list-inside text-gray-700 text-sm leading-relaxed space-y-3">
+                    <li>
+                        As the <span className="font-semibold">Go-To Engineer</span>, my top priority is resolving critical bugs that impact user experience
+                        or lead to inefficient resource utilization. Once stabilized, I focus on building optimized, future-proof features
+                        with best coding practices.
+                    </li>
+                    <li>
+                        Working on <span className="font-semibold">Scalability</span> has been a major growth area for me—
+                        from optimizing databases and implementing caching, strategies to setting up monitoring, logging, and tracking tools.
+                        Constantly learning and experimenting to improve system performance.
+                    </li>
+                    <li>
+                        Ensuring <span className="font-semibold">System Security</span> by implementing WAF, GuardDuty, following <span className="font-semibold">OWASP</span> secure coding guidelines, and actively monitoring for vulnerabilities or attacks.
+                    </li>
+                    <li>
+                        Developing critical features like the <span className="font-semibold">communication system</span>,
+                        enabling seamless WhatsApp, SMS, email, and call-based interactions. Ensuring efficiency and reliability in messaging workflows.
+                    </li>
+                    <li>
+                        Reviewing PRs for key features, collaborating closely with the team to ensure smooth deployments
+                        with minimal friction.
+                    </li>
+                </ul>
+            </section>
+
+            {/* Key Projects Section */}
+            <section>
+                <h2 className="text-lg font-semibold border-b pb-2 mb-4 text-[#E16349]">Key Projects</h2>
+                <ul className="space-y-6">
+                    {/* Project 1 */}
+                    <li>
+                        <h3 className="font-semibold text-gray-800">Circle Health Customer App</h3>
+                        <p className="text-gray-700 text-sm leading-relaxed mt-1">
+                            Contributed equally to both frontend and backend development. A key learning experience was handling
+                            <span className="font-semibold"> app releases</span>—managing code pushes, deployments to the Google Play Store and App Store,
+                            and ensuring a seamless user experience. Monitoring errors, preventing crashes, and debugging issues in production
+                            provided invaluable insights. Late-night production deployments to avoid disrupting users became part of the process.
+                        </p>
+                        <p className="mt-1 text-xs">
+                            Open on mobile to view the app on the App Store.
+                            {" "}
+                            <a
+                                href="https://onelink.to/j8wnu8"
+                                className="text-[#E16349] underline text-sm"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Customer App
+                            </a>
+                        </p>
+                    </li>
+                    {/* Project 2 */}
+                    <li>
+                        <h3 className="font-semibold text-gray-800">WhatsApp Communication System</h3>
+                        <p className="text-gray-700 text-sm leading-relaxed mt-1">
+                            Built an in-house <span className="font-semibold">full-stack SaaS solution</span> to replace a paid service,
+                            integrating Meta's WhatsApp API for automation. Developed key features like WhatsApp bot flows,
+                            interactive messaging, and additional tools for internal and external clients.
+                            Handling <span className="font-semibold">real-time messaging</span>, managing queue systems,
+                            and implementing <span className="font-semibold">load balancing</span> under tight deadlines
+                            was a major learning experience.
+                        </p>
+                        <p className="mt-1 text-xs">
+                            <a
+                                href="https://wacom.circle.care"
+                                className="text-[#E16349] underline text-sm"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                WACOM
+                            </a>
+                        </p>
+                    </li>
+                    {/* Project 3 */}
+                    <li>
+                        <h3 className="font-semibold text-gray-800">Hoops App (Philippines App)</h3>
+                        <p className="text-gray-700 text-sm leading-relaxed mt-1">
+                            Independently built the entire system, including the <span className="font-semibold">admin dashboard</span>{" "}
+                            and <span className="font-semibold">mobile application</span>, based on client requirements. Managing multiple iterations and ensuring
+                            a seamless experience for the client was both a challenge and an achievement.
+                            Previous learnings helped in delivering a high-quality product efficiently.
+                        </p>
+                        <p className="mt-1 text-xs">
+                            Open on mobile to view the app on the App Store.
+                            {" "}
+                            <a
+                                href="https://wearables-assets.s3.ap-south-1.amazonaws.com/hoops-wearableresponse.html"
+                                className="text-[#E16349] underline text-sm"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                HOOPS APP
+                            </a>
+                        </p>
+                    </li>
+                    {/* Project 4 */}
+                    <li>
+                        <h3 className="font-semibold text-gray-800">System Integrations with Partners</h3>
+                        <p className="text-gray-700 text-sm leading-relaxed mt-1">
+                            Integrated our system with partner platforms to extend our services to their clients.
+                            Focused on <span className="font-semibold">secure API design</span>, protected endpoints,
+                            data wrapping, and preventing data leaks to ensure smooth and hassle-free integration.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+        </div>,
+        icon: "breifcase",
+        year: '10-2022 - Present'
+    }
 
     const projects = [
         {
-            id: 0,
-            type: "work",
-            title: "Circle Health",
-            description: "Software Engineer",
-            tooltip: "Software Engineer",
-            date: '2022-10 - 2023-08 as Intern, 2023-09 - Present',
-            techStack: ["MERN Stack", "PostgreSQL", "AWS", "FastAPI", "GeminiAPI", "React Native", "MUI", "Tailwind CSS", "ShadCN"],
-            description1: <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-                {/* Summary Section */}
-                <section className="mb-6">
-                    <h2 className="text-lg font-semibold border-b pb-2 mb-4">Work Experience</h2>
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                        As one of the <span className="font-semibold">Senior Developers</span> at
-                        Circle Health, I have worked extensively on multiple products, primarily
-                        focusing on backend development, AWS integration, and implementing secure
-                        coding best practices. My role has involved everything from building
-                        standalone applications to implementing critical features with a{" "}
-                        <span className="font-semibold">0% error rate</span>. I have also followed
-                        <span className="font-semibold"> OWASP coding practices</span>, ensuring
-                        system security and robustness.
-                    </p>
-                    <p className="text-gray-700 text-sm leading-relaxed mt-3">
-                        Starting my journey as the company's first full-stack intern, I have
-                        grown exponentially to become a Senior Developer, contributing to Circle
-                        Health's success through consistent technical innovation and leadership.
-                    </p>
-                </section>
-
-                {/* Skills and Practices Section */}
-                <section className="mb-6">
-                    <h2 className="text-lg font-semibold border-b pb-2 mb-4">Skills and Practices</h2>
-                    <ul className="list-disc list-inside text-gray-700 text-sm leading-relaxed space-y-3">
-                        <li>
-                            Expertise in <span className="font-semibold">backend development</span>{" "}
-                            and system integration using tools like <span className="font-semibold">Node.js</span>,{" "}
-                            <span className="font-semibold">FastAPI</span>, and <span className="font-semibold">PostgreSQL</span>.
-                        </li>
-                        <li>
-                            Extensive experience in <span className="font-semibold">AWS</span> services, including hosting solutions such as
-                            <span className="font-semibold">S3</span>, <span className="font-semibold">Cloudflare</span>, and <span className="font-semibold">Route53</span>;
-                            managing secure web applications with tools like <span className="font-semibold">WAF</span> and <span className="font-semibold">CodeGuru</span>;
-                            and implementing scalable infrastructure using <span className="font-semibold">Load Balancers</span>, <span className="font-semibold">ElasticCache</span>,
-                            <span className="font-semibold">Lambda functions</span>, and setting up and maintaining <span className="font-semibold">RDS</span>.
-                        </li>
-                        <li>
-                            Adherence to <span className="font-semibold">OWASP coding standards</span> for secure development.
-                        </li>
-                        <li>
-                            Contributed to both <span className="font-semibold">frontend</span> and{" "}
-                            <span className="font-semibold">backend</span> systems for a seamless
-                            customer experience.
-                        </li>
-                        <li>
-                            Built <span className="font-semibold">Non-Login Applications (NLA)</span>
-                            for enhanced customer usability, including features such as booking and
-                            address updates.
-                        </li>
-                    </ul>
-                </section>
-
-                {/* Key Projects Section */}
-                <section>
-                    <h2 className="text-lg font-semibold border-b pb-2 mb-4">Key Projects</h2>
-                    <ul className="space-y-6">
-                        {/* Project 1 */}
-                        <li>
-                            <h3 className="font-semibold text-gray-800">CHAMS - Circle Health Admin Management System</h3>
-                            <p className="text-gray-700 text-sm leading-relaxed mt-1">
-                                A centralized backend system built using <span className="font-semibold">Node.js</span>.
-                                My responsibilities included building APIs, integrating with client systems to sync employee records, automating WhatsApp messages and emails,
-                                and setting up schedulers for automatic synchronization and messaging.
-                            </p>
-                        </li>
-                        {/* Project 2 */}
-                        <li>
-                            <h3 className="font-semibold text-gray-800">WACOMM - WhatsApp Communication System</h3>
-                            <p className="text-gray-700 text-sm leading-relaxed mt-1">
-                                Developed a full-stack SaaS application using <span className="font-semibold">FastAPI</span>,{" "}
-                                <span className="font-semibold">React</span>, <span className="font-semibold">ShadCN</span>,
-                                and <span className="font-semibold">PostgreSQL</span>. The platform integrates with WhatsApp's META APIs to enable users to send template-based WhatsApp messages, flows, and notifications.
-                                Key features include message tracking (e.g.,sent time, delivered time, read time in UTC) and a robust backend architecture.
-                            </p>
-                        </li>
-                        {/* Project 3 */}
-                        <li>
-                            <h3 className="font-semibold text-gray-800">Circle Health Customer App</h3>
-                            <p className="text-gray-700 text-sm leading-relaxed mt-1">
-                                Contributed to both frontend and backend development using <span className="font-semibold">React Native (Expo)</span>.
-                                Key responsibilities included ensuring APIs were securely authenticated and validated, maintaining a low error rate, optimizing response times,
-                                and successfully passing <span className="font-semibold">Vulnerability Assessment and Penetration Testing (VAPT)</span>.
-                            </p>
-                        </li>
-                        {/* Project 4 */}
-                        <li>
-                            <h3 className="font-semibold text-gray-800">Non-Login Applications (NLA)</h3>
-                            <p className="text-gray-700 text-sm leading-relaxed mt-1">
-                                Developed non-login web applications for customers, including booking systems and address updates. Managed the entire development lifecycle,
-                                including building secure backend systems, designing intuitive frontends, and hosting on AWS.
-                            </p>
-                        </li>
-                    </ul>
-                </section>
-            </div>
-        },
-        {
-            id: 1,
-            type: "project",
-            title: "WACOMM",
-            description1:
-                <>
-                    <div className="text-sm leading-relaxed">
-                        <p>
-                            <strong className="font-semibold">
-                                WACOMM is a SaaS product designed to serve as an endpoint for
-                                organizations to send WhatsApp messages to their customers through
-                                the WhatsApp Meta API.
-                            </strong>{" "}
-                            This application enables a single organization with multiple customer
-                            support members, using a single business account number, to manage
-                            and send various types of messages, including:
-                        </p>
-                        <ul className="list-disc pl-5 mt-3">
-                            <li>Individual messages</li>
-                            <li>Bulk messages</li>
-                            <li>Template messages</li>
-                            <li>Photos</li>
-                            <li>Videos</li>
-                            <li>Webflows</li>
-                            <li>Documents</li>
-                        </ul>
-                        <p className="mt-3">
-                            Additionally, the system allows to raise ticket (Incident Management), generate summary of audio using <span className="italic font-semibold">GEMINI AI</span> and allows to integrate with customers table and sync users list.
-                        </p>
-                    </div>
-                </>
-            ,
-            tooltip: "Whatsapp Communication System",
-            githubLink: "https://github.com/priyankaj04/WACOMM",
-            techStack: ["FAST API",
-                "Uvicorn",
-                "Pydantic",
-                "SQLAlchemy",
-                "PostgreSQL",
-                "AWS SQS",
-                "SES Client",
-                "META WA API"]
-        },
-        {
             id: 2,
-            title: "CRMS",
+            title: "Campus Recruitment Management System",
             type: "project",
             description1: <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
                 {/* Intro Section */}
                 <section className="mb-6">
-                    <h2 className="text-lg font-semibold border-b pb-2 mb-4">
+                    <h2 className="text-lg font-semibold border-b pb-2 mb-4 text-[#E16349]">
                         Overview
                     </h2>
                     <p className="text-gray-700 text-sm leading-relaxed">
@@ -188,7 +161,7 @@ const Projects = () => {
 
                 {/* Users and Roles Section */}
                 <section className="mb-6">
-                    <h2 className="text-lg font-semibold border-b pb-2 mb-4">Users and Roles</h2>
+                    <h2 className="text-lg font-semibold border-b pb-2 mb-4 text-[#E16349]">Users and Roles</h2>
                     <p className="text-gray-700 text-sm leading-relaxed mb-4">
                         The CRMS platform caters to four main types of users, each with distinct
                         roles and access levels:
@@ -217,7 +190,7 @@ const Projects = () => {
 
                 {/* Features Section */}
                 <section>
-                    <h2 className="text-lg font-semibold border-b pb-2 mb-4">Features</h2>
+                    <h2 className="text-lg font-semibold border-b pb-2 mb-4 text-[#E16349]">Features</h2>
                     <p className="text-gray-700 text-sm leading-relaxed mb-4">
                         The CRMS offers a robust set of features designed to make the recruitment
                         process efficient and user-friendly:
@@ -227,6 +200,10 @@ const Projects = () => {
                             <span className="font-semibold">Student Profiles</span>: Students can
                             create detailed profiles that include resumes, mark sheets, syllabi,
                             and other academic records.
+                        </li>
+                        <li>
+                            <span className="font-semibold">Resume Builder</span>: Students will build their
+                            resume and apply for jobs. This is to maintain uniform view of porfolio for recruiters.
                         </li>
                         <li>
                             <span className="font-semibold">Recruiter Profiles</span>: Recruiters
@@ -262,7 +239,6 @@ const Projects = () => {
                     </ul>
                 </section>
             </div>
-
             ,
             tooltip: "Campus Recruitment Management System",
             githubLink: "https://github.com/priyankaj04/CampusRecruitmentApp",
@@ -281,48 +257,77 @@ const Projects = () => {
     };
 
     return (
-        <div className="h-full w-full lg:w-[70%] bg-[#eaeaea] border-2 border-[#eaeaea] rounded-[25px] relative">
-            <div className="absolute top-1/2 left-0 transform -translate-y-1/2 z-10">
-                <button
-                    onClick={scrollLeft}
-                    className="p-2 px-4 rounded-full bg-[#E16349] text-white shadow hover:bg-[#f56950] transition duration-300"
-                >
-                    &lt;
-                </button>
-            </div>
-            <div className="absolute top-1/2 right-0 transform -translate-y-1/2 z-10">
-                <button
-                    onClick={scrollRight}
-                    className="p-2 px-4 rounded-full bg-[#E16349] text-white shadow hover:bg-[#f56950] transition duration-300"
-                >
-                    &gt;
-                </button>
-            </div>
+        <div className="h-full w-full lg:w-[70%] my-1">
+            <div className="flex flex-col gap-4 h-full xl:flex-row 2xl:flex-row lg:flex-row">
+                {/* Work Experience Card */}
+                <div className="flex flex-1 bg-white p-5 rounded-[25px] border border-[#eaeaea] hover:scale-105 shadow-md hover:shadow-lg transition-transform duration-300 ease-in-out">
+                    <div className="flex flex-col h-full justify-between">
+                        {/* Title & Icon */}
+                        <div className="flex gap-3 items-center">
+                            <div className="p-2 bg-[#eaeaea] rounded-full w-12 h-12 flex items-center justify-center">
+                                <Player
+                                    ref={briefRef}
+                                    size={24}
+                                    icon={BRIEFCASE}
+                                    onComplete={() => briefRef.current?.playFromBeginning()}
+                                />
+                            </div>
+                            <div>
+                                <h3 className="text-lg font-semibold text-[#333]">
+                                    {work.title}
+                                </h3>
+                                <p className="text-sm text-[#666]">{work.tooltip}</p>
+                            </div>
+                        </div>
 
-            <div
-                ref={scrollRef}
-                className="flex gap-4 overflow-x-scroll scroll-smooth scrollbar-hide mx-5"
-                style={{ scrollBehavior: "smooth" }}
-            >
+                        {/* Role Info */}
+                        <div className="mt-2 text-sm text-[#444]">
+                            <span className="font-semibold">{work.year}</span>
+                            <br />
+                            Backend Engineer | Go-To Engineer | Security | Scalability | App
+                        </div>
+
+                        {/* Button */}
+                        <div className="flex justify-center mt-4">
+                            <button
+                                onClick={() => setOpenWork(true)}
+                                className="px-4 py-2 text-sm font-medium text-white bg-[#E16349] rounded-full hover:bg-[#f56950] transition-colors duration-300"
+                            >
+                                Dive In
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Projects Section */}
                 {projects.map((project) => (
                     <div
                         key={project.id}
-                        className="min-w-[230px] max-w-[230px] my-5 bg-white p-4 rounded-[25px] border border-[#eaeaea] hover:scale-105 transition-transform duration-300"
+                        className="flex flex-1 bg-white p-5 rounded-[25px] border border-[#eaeaea] hover:scale-105 shadow-md hover:shadow-lg transition-transform duration-300 ease-in-out"
                     >
                         <div className="flex flex-col h-full justify-between">
-                            <div>
-                                <div className="flex justify-end mb-3">
-                                    <p className="px-3 py-1 text-xs font-semibold rounded-full bg-[#FFF5F3] text-[#E16349] border border-[#E16349]">
-                                        {project.type}
-                                    </p>
+                            {/* Project Title */}
+                            <div className="flex gap-3 items-center">
+                                <div>
+                                    <h3 className="text-lg font-semibold text-[#333]">
+                                        {project.title}
+                                    </h3>
                                 </div>
-                                <h3 className="text-lg font-semibold text-[#333] mb-2">
-                                    {project.title}
-                                </h3>
-                                <p className="text-sm text-[#666]">{project.tooltip}</p>
                             </div>
+
+                            {/* Description */}
+                            <div className="mt-2 text-sm text-[#444]">
+                                <span className="font-semibold">Full Stack - React Native Application</span>
+                                <br />
+                                College Project | Expo Go
+                            </div>
+
+                            {/* Button */}
                             <div className="flex justify-center mt-4">
-                                <button onClick={() => openModal(project)} className="px-4 py-2 text-sm font-medium text-white bg-[#E16349] rounded-full hover:bg-[#f56950] transition-colors duration-300">
+                                <button
+                                    onClick={() => openModal(project)}
+                                    className="px-4 py-2 text-sm font-medium text-white bg-[#E16349] rounded-full hover:bg-[#f56950] transition-colors duration-300"
+                                >
                                     Dive In
                                 </button>
                             </div>
@@ -330,38 +335,68 @@ const Projects = () => {
                     </div>
                 ))}
             </div>
+
+            <Modal
+                isOpen={openWork}
+                onRequestClose={() => setOpenWork(false)}
+                contentLabel="Project Details"
+                className="bg-white border-2 border-[#eaeaea] p-6 rounded-[25px] mx-auto my-10 h-[90%] w-[90%] shadow-lg z-50 overflow-y-scroll"
+                overlayClassName="bg-black bg-opacity-50 fixed inset-0 flex items-center justify-center z-50 overflow-y-scroll"
+            >
+                <div className="flex flex-col justify-between h-full">
+                    <div className="flex flex-col gap-4 flex-1">
+                        <div className="mb-20">
+                            <div className="flex flex-1 justify-between mb-5 items-center">
+                                <div>
+                                    <h2 className="text-black font-semibold text-2xl">
+                                        {work.tooltip} <span className="text-[#E16349] text-normal">@</span> <span className="underline cursor-pointer" onClick={() => window.open('https://circlehealth.in')}>{work.title}</span>
+                                    </h2>
+                                    {work.date && <p className="text-[#555] text-sm">{work.date}</p>}
+                                </div>
+                                <div onClick={() => setOpenWork(false)} className="cursor-pointer">
+                                    <img src={Xletter} width={25} height={25} />
+                                </div>
+                            </div>
+                            <p className="text-sm leading-relaxed">
+                                {work.description1}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </Modal>
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
                 contentLabel="Project Details"
-                className="bg-white border-2 border-[#eaeaea] p-6 rounded-[25px] mx-auto my-10 h-3/4 w-3/4 shadow-lg z-50 overflow-y-scroll"
+                className="bg-white border-2 border-[#eaeaea] p-6 rounded-[25px] mx-auto my-10 h-[90%] w-[90%] shadow-lg z-50 overflow-y-scroll"
                 overlayClassName="bg-black bg-opacity-50 fixed inset-0 flex items-center justify-center z-50 overflow-y-scroll"
             >
                 {selectedProject && (
                     <div className="flex flex-col justify-between h-full">
                         <div className="flex flex-col gap-4 flex-1">
                             {/* Title */}
-                            <h2 className="text-black font-semibold text-2xl">
-                                {selectedProject.tooltip}
-                            </h2>
-                            {selectedProject.date && <p className="text-[#555] text-sm">{selectedProject.date}</p>}
-                            {/* Tech Stack */}
-                            <div className="flex gap-2 flex-wrap">
-                                {selectedProject.techStack?.map((tech) => (
-                                    <span
-                                        key={tech}
-                                        className="px-3 py-1 text-sm font-semibold bg-[#FFF5F3] text-[#E16349] rounded-full border border-[#E16349]"
-                                    >
-                                        {tech}
-                                    </span>
-                                ))}
+                            <div className="flex flex-1 justify-between mb-2 items-center">
+                                <div>
+                                    <h2 className="text-black font-semibold text-2xl">
+                                        {selectedProject.tooltip}
+                                    </h2>
+                                    {/* Tech Stack */}
+                                    <div className="flex gap-2 flex-wrap mt-2">
+                                        {selectedProject?.techStack?.map((tech) => (
+                                            <span
+                                                key={tech}
+                                                className="px-3 py-1 text-sm font-semibold bg-[#FFF5F3] text-[#E16349] rounded-full border border-[#E16349]"
+                                            >
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                                <div onClick={closeModal} className="cursor-pointer">
+                                    <img src={Xletter} width={25} height={25} />
+                                </div>
                             </div>
-                            {/* Description */}
-                            <p className="text-sm leading-relaxed">
-                                {selectedProject.description1}
-                            </p>
-                            {/* GitHub Link */}
-                            {selectedProject.githubLink && <div className="mt-4">
+                            {selectedProject.githubLink && <div className="mt-2">
                                 <a
                                     href={selectedProject.githubLink}
                                     target="_blank"
@@ -385,20 +420,14 @@ const Projects = () => {
                                     View on GitHub
                                 </a>
                             </div>}
-                        </div>
-                        {/* Close Button */}
-                        <div className="flex justify-end mt-6">
-                            <button
-                                onClick={closeModal}
-                                className="px-4 py-2 text-sm font-medium text-white bg-[#E16349] rounded-full hover:bg-[#c5523d] transition-colors duration-300"
-                            >
-                                Close
-                            </button>
+                            {/* Description */}
+                            <p className="text-sm leading-relaxed mb-20">
+                                {selectedProject.description1}
+                            </p>
                         </div>
                     </div>
                 )}
             </Modal>
-
         </div >
     );
 };

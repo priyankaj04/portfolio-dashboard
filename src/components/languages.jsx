@@ -9,21 +9,18 @@ import Nodejs from '../assets/node.svg'
 import Fastapi from '../assets/fastapi.svg'
 import Django from '../assets/django.svg'
 import Flask from '../assets/flask.svg'
-import Uvicorn from '../assets/unicorn.svg'
+import Go from '../assets/go.svg'
 import Redis from '../assets/redis.svg'
-import knex from '../assets/knex.svg'
-import Pydantic from '../assets/pydantic.svg'
-import Gunicorn from '../assets/gunicorn.svg'
 import Nginx from '../assets/nginx.svg'
 import Docker from '../assets/docker.svg'
 import react from '../assets/react.svg'
 import angualr from '../assets/angular.svg'
 import next from '../assets/next.svg'
-import flutter from '../assets/flutter.svg'
+import Redux from '../assets/redux.svg'
 import mui from '../assets/mui.svg'
 import tailwind from '../assets/tailwind.svg'
-import shadcn from '../assets/shadcn.svg'
-import cloudflare from '../assets/cloudflare.svg'
+import newrelic from '../assets/newrelic.svg'
+import grafana from '../assets/grafana.svg'
 import ec2 from '../assets/ec2.svg'
 import cloudwatch from '../assets/cloudwatch.svg'
 import Codepipeline from '../assets/codepipeline.svg'
@@ -83,32 +80,16 @@ function Languages() {
                     name: 'FASTAPI'
                 },
                 {
-                    icon: Django,
-                    name: 'Django'
+                    icon: Go,
+                    name: 'Go-fiber'
                 },
                 {
                     icon: Flask,
                     name: 'Flask'
                 },
                 {
-                    icon: Uvicorn,
-                    name: 'Uvicorn'
-                },
-                {
-                    icon: Redis,
-                    name: 'Redis'
-                },
-                {
-                    icon: knex,
-                    name: 'KnexJS'
-                },
-                {
-                    icon: Pydantic,
-                    name: 'Pydantic'
-                },
-                {
-                    icon: Gunicorn,
-                    name: 'Gunicorn'
+                    icon: Django,
+                    name: 'Django'
                 },
                 {
                     icon: Nginx,
@@ -119,7 +100,7 @@ function Languages() {
                     name: 'Docker'
                 }
             ],
-            rating: 'Where the magic happens behind the scenes. Building secure, scalable foundations.'
+            rating: 'Like it? Nah, I LOVE it! It’s exciting, challenging, and there’s always more to learn. Backend isn’t just about CRUD—it’s about architecting real systems.'
         },
         frontend: {
             icons: [
@@ -132,31 +113,19 @@ function Languages() {
                     name: 'ReactNative'
                 },
                 {
-                    icon: angualr,
-                    name: 'Angular'
+                    icon: Redux,
+                    name: 'Redux'
                 },
                 {
                     icon: next,
                     name: 'NextJS'
                 },
                 {
-                    icon: flutter,
-                    name: 'Flutter'
-                },
-                {
-                    icon: mui,
-                    name: 'MaterialUI'
-                },
-                {
                     icon: tailwind,
                     name: 'TailwindCSS'
-                },
-                {
-                    icon: shadcn,
-                    name: 'ShadCN'
                 }
             ],
-            rating: 'Crafting delightful user experiences.Transforming ideas into engaging interfaces.'
+            rating: 'Decent! I’d say, but I can build clean, functional, and user-friendly UIs when needed. It’s about delivering smooth experiences, not just pretty screens.'
         },
         database: {
             icons: [
@@ -165,26 +134,22 @@ function Languages() {
                     name: 'PostgreSQL'
                 },
                 {
-                    icon: Supabase,
-                    name: 'Supabase'
+                    icon: Redis,
+                    name: 'Redis'
                 },
                 {
-                    icon: Sqllite,
-                    name: 'SQLLite'
+                    icon: Supabase,
+                    name: 'Supabase'
                 },
                 {
                     icon: Mongodb,
                     name: 'MongoDB'
                 }
             ],
-            rating: 'Empowering data-driven decision-making. Efficiently managing and querying the heart of applications.'
+            rating: "Wow! It’s way more than just queries. Scaling starts with a well-optimized database, and I enjoy designing efficient, high-performance data structures."
         },
         aws: {
             icons: [
-                {
-                    icon: cloudflare,
-                    name: 'CloudFlare'
-                },
                 {
                     icon: ec2,
                     name: 'EC2'
@@ -206,10 +171,6 @@ function Languages() {
                     name: 'Lambda'
                 },
                 {
-                    icon: ses,
-                    name: 'Sesclient'
-                },
-                {
                     icon: sqs,
                     name: 'SQS'
                 },
@@ -218,7 +179,20 @@ function Languages() {
                     name: 'Route53'
                 }
             ],
-            rating: 'Hosting smarter, scaling faster. Seamlessly deploying to the cloud.'
+            rating: 'Seamless deployments, scalability, and automation—Worked on all these. Also, let’s be real… logging into a VM just feels like peak developer mode!'
+        },
+        "apm tools": {
+            icons: [
+                {
+                    icon: newrelic,
+                    name: 'New Relic'
+                },
+                {
+                    icon: grafana,
+                    name: 'Grafana'
+                },
+            ],
+            rating: 'APM tools give me deep insights into system performance, helping me identify bottlenecks, optimize resources, and prevent recurring issues before they escalate.'
         },
     }
 
@@ -324,23 +298,25 @@ function Languages() {
                     </div>
                     <div className='h-full w-full lg:w-[70%] bg-[#eaeaea] rounded-[35px]'>
                         <div className='flex flex-col w-full h-full'>
-                            <div className='bg-[#ffffff] border-2 border-[#eaeaea] rounded-[35px] w-full h-[70%] p-5 flex flex-col gap-3'>
+                            <div className='bg-[#ffffff] border-2 border-[#eaeaea] rounded-[35px] w-full h-[70%] p-5 flex flex-col gap-2'>
                                 <div>
                                     <div className='flex flex-1 gap-2 items-center text-sm flex-wrap'>
                                         <div onClick={() => setType('backend')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#eaeaea] cursor-pointer hover:font-semibold hover:scale-105 ${type === 'backend' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : 'hover:bg-[#eaeaea]'}`}>Backend</div>
                                         <div onClick={() => setType('frontend')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#eaeaea] cursor-pointer hover:font-semibold hover:scale-105 ${type === 'frontend' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : 'hover:bg-[#eaeaea]'}`}>Frontend</div>
                                         <div onClick={() => setType('database')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#eaeaea] cursor-pointer hover:font-semibold hover:scale-105 ${type === 'database' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : 'hover:bg-[#eaeaea]'}`}>Database</div>
                                         <div onClick={() => setType('aws')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#eaeaea] cursor-pointer hover:font-semibold hover:scale-105 ${type === 'aws' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : 'hover:bg-[#eaeaea]'}`}>AWS</div>
+                                        <div onClick={() => setType('apm tools')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#eaeaea] cursor-pointer hover:font-semibold hover:scale-105 ${type === 'apm tools' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : 'hover:bg-[#eaeaea]'}`}>APM Tools</div>
                                     </div>
                                 </div>
-                                <div className='flex justify-center py-5'>
+                                <div className='flex justify-center py-3'>
                                     <div className='flex flex-1'>
-                                        <div className='flex-1 w-full flex gap-3 flex-wrap items-center'>
+                                        <div className='flex-1 w-full flex gap-4 flex-wrap items-center'>
                                             {Skills[type].icons.map((item) => (
-                                                <div>
-                                                    <a id={item.name} className='bg-[#E16349] flex justify-center cursor-pointer rounded-full p-2'>
+                                                <div className="gap-y-1 flex flex-col items-center">
+                                                    <a id={item.name} className='bg-[#E16349] flex justify-center cursor-pointer rounded-full p-2 w-12'>
                                                         <img src={item.icon} width="30px" height="30px" />
                                                     </a>
+                                                    <p className={`text-xs text-center`}>{item.name}</p>
                                                     <Tooltip anchorSelect={`#${item.name}`} place="top">{item.name}</Tooltip>
                                                 </div>
                                             ))}
@@ -355,37 +331,41 @@ function Languages() {
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M10.05 4.575a1.575 1.575 0 1 0-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 0 1 3.15 0v1.5m-3.15 0 .075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 0 1 3.15 0V15M6.9 7.575a1.575 1.575 0 1 0-3.15 0v8.175a6.75 6.75 0 0 0 6.75 6.75h2.018a5.25 5.25 0 0 0 3.712-1.538l1.732-1.732a5.25 5.25 0 0 0 1.538-3.712l.003-2.024a.668.668 0 0 1 .198-.471 1.575 1.575 0 1 0-2.228-2.228 3.818 3.818 0 0 0-1.12 2.687M6.9 7.575V12m6.27 4.318A4.49 4.49 0 0 1 16.35 15m.002 0h-.002" />
                                         </svg>
                                     </div>
-                                    <div className='p-2 px-4'>{Skills[type]?.rating}</div>
+                                    <div className='p-2 px-4 text-sm'>{Skills[type]?.rating}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className='h-full gap-5 w-full lg:w-[25%] flex flex-row lg:flex-col'>
-                        <div className='flex-1 h-1/2 hover:scale-105 cursor-pointer p-5 lg:p-0 rounded-[35px] bg-[#eaeaea] flex flex-col justify-center text-center items-center text-sm'>
+                    <div className='h-full w-full lg:max-w-[250px] flex flex-row lg:flex-col gap-5'>
+                        {/* Progress Card */}
+                        <div className='flex-1 hover:scale-105 transition-all duration-300 cursor-pointer p-5 lg:p-3 rounded-[30px] bg-[#eaeaea] flex flex-col justify-center items-center text-center text-sm shadow-md hover:shadow-lg'>
                             <Player
                                 ref={playerRef}
                                 size={28}
                                 icon={CHART}
                                 onComplete={() => playerRef.current?.playFromBeginning()}
                             />
-                            <span className='text-[#E16349] font-semibold mt-1'>Progress</span>over Perfection
+                            <span className='text-[#E16349] font-semibold mt-1'>Progress</span> over Perfection
                         </div>
-                        <div className='flex-1 h-1/2 p-5 hover:scale-105 cursor-pointer lg:p-0 rounded-[35px] bg-[#000000] flex flex-col justify-center items-center text-center text-sm text-[#E16349]'>
+
+                        {/* Excellence Card */}
+                        <div className='flex-1 p-5 lg:p-3 hover:scale-105 transition-all duration-300 cursor-pointer rounded-[30px] bg-[#000000] flex flex-col justify-center items-center text-center text-sm text-[#E16349] shadow-md hover:shadow-lg'>
                             <Player
                                 ref={growthRef}
                                 size={28}
                                 icon={GROWTH}
                                 onComplete={() => growthRef.current?.playFromBeginning()}
                             />
-                            <div className='text-[#ffffff] font-semibold text-lg'>Chasing Excellence</div>
-                            One Step at a Time
+                            <div className='text-white font-semibold text-lg'>Chasing Excellence</div>
+                            <span className="text-xs text-gray-300">One Step at a Time</span>
                         </div>
                     </div>
+
                 </div>
                 <div className="w-full py-1 flex flex-col md:flex-row lg:flex-row h-1/2 gap-5">
                     <div className='h-full hover:scale-105 cursor-pointer gap-5 w-full lg:w-[30%] bg-[#eaeaea] rounded-[35px] flex flex-col'>
                         <div className='flex-1 h-1/2 p-5 lg:p-0 rounded-[35px] bg-[#eaeaea] flex flex-col text-sm'>
-                            <div className='p-5 flex flex-col justify-between  h-full'>
+                            <div className='p-5 flex flex-col justify-between gap-2  h-full'>
                                 <div className='flex items-center gap-2'>
                                     <div className='bg-[#ffffff] p-2 rounded-full shake-animation hover:scale-105 cursor-pointer'>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
@@ -394,7 +374,14 @@ function Languages() {
                                     </div>
                                     Education
                                 </div>
-                                <div className='flex flex-col h-full justify-evenly'>
+                                <div className='flex flex-col h-full justify-evenly gap-2'>
+                                    <div>
+                                        <p className='font-semibold text-sm'>MCA</p>
+                                        <div className='flex flex-1 justify-between text-xs text-[#808080]'>
+                                            <p>Vellore Institute of Technology</p>
+                                            <p>2025-Present</p>
+                                        </div>
+                                    </div>
                                     <div>
                                         <p className='font-semibold text-sm'>BCA<span className='text-xs font-light'>(9.1/10)</span></p>
                                         <div className='flex flex-1 justify-between text-xs text-[#808080]'>
@@ -409,176 +396,10 @@ function Languages() {
                                             <p>2018-2020</p>
                                         </div>
                                     </div>
-                                    <div>
-                                        <p className='font-semibold'>10th std</p>
-                                        <div className='flex flex-1 justify-between text-xs text-[#808080]'>
-                                            <p>Pt. J N M School</p>
-                                            <p>2018</p>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {/* <div className='h-full w-full lg:w-[70%] bg-[#ffffff] border-2 border-[#eaeaea] rounded-[35px]'>
-                        <div className='flex flex-col w-full h-full'>
-                            <div className=' rounded-[35px] w-full h-full p-5 flex flex-col'>
-                                <div className='flex flex-1 justify-end'>
-                                    <div className='gap-2 items-center flex text-sm flex-wrap'>
-                                        <div onClick={() => setWork('experience')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#eaeaea] hover:font-semibold hover:scale-105 cursor-pointer ${work === 'experience' ? 'bg-[#000000] hover:bg-[#000000] text-white font-semibold' : 'hover:bg-[#eaeaea]'}`}>Experience</div>
-                                        <div onClick={() => setWork('projects')} className={`p-2 px-4 rounded-full border-2 text-xs border-[#eaeaea] hover:font-semibold hover:scale-105 cursor-pointer ${work === 'projects' ? 'bg-[#000000] text-white hover:bg-[#000000] font-semibold' : 'hover:bg-[#eaeaea]'}`}>Projects</div>
-                                    </div>
-                                </div>
-                                {
-                                    work === 'experience' ?
-                                        <div className='flex flex-col gap-2 h-full justify-evenly'>
-                                            <div>
-                                                <div className='flex flex-1 items-center gap-3 text-[#E16349] font-semibold text-xl'>
-                                                    <div className="p-2 bg-[#eaeaea] rounded-full">
-                                                        <Player
-                                                            ref={briefRef}
-                                                            size={22}
-                                                            icon={BRIEFCASE}
-                                                            onComplete={() => briefRef.current?.playFromBeginning()}
-                                                        />
-                                                    </div>
-                                                    Circle Health
-                                                </div>
-                                                <p className='text-sm'>Software Engineer - Bengaluru</p>
-                                                <p className='text-xs font-normal text-[#808080]'>Sept-2023 - Present | Intern: Oct-2022 - Jul-2023</p>
-                                            </div>
-                                            <p className='text-sm font-semibold'>FASTAPI, PERN stack, AWS, Docker, React Native, Sentry, Cypress, OpenAI, META API</p>
-                                            <p className='text-sm'>As a lead developer at Circle Health, I oversee the architecture and development of top-tier SaaS products, managing databases, deploying to CICD, and ensuring the security and scalability of our offerings.</p>
-                                        </div> : work === 'projects' ?
-                                            <div className='flex flex-col md:flex-row lg:flex-row gap-5 mt-5 h-full'>
-                                                <a id='wacommtitle' className='flex-1 hover:scale-105 cursor-pointer  flex flex-col gap-3 bg-[#eaeaea] p-5 h-full rounded-[35px]'>
-                                                    <div className='flex flex-1 justify-between items-center'>
-                                                        <div className='flex flex-1 items-center gap-1 text-[#E16349] font-bold'>
-                                                            <Player
-                                                                ref={wacommRef}
-                                                                size={30}
-                                                                icon={WACOMM}
-                                                                onComplete={() => wacommRef.current?.playFromBeginning()}
-                                                            />
-                                                            WACOMM
-                                                        </div>
-                                                        <a onClick={() => window.open('https://github.com/priyankaj04/WACOMM', '_blank')} id='githubproj1' className='cursor-pointer p-2 bg-white rounded-full flex justify-center items-center'>
-                                                            <svg
-                                                                width="25px"
-                                                                height="25px"
-                                                                viewBox="0 0 48 48"
-                                                                id="Layer_2"
-                                                                data-name="Layer 2"
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                            >
-                                                                <defs>
-                                                                    <style>
-                                                                        {
-                                                                            ".cls-1{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;fill-rule:evenodd;stroke-width:2;}"
-                                                                        }
-                                                                    </style>
-                                                                </defs>
-                                                                <path
-                                                                    className="cls-1"
-                                                                    d="M24,2.5a21.5,21.5,0,0,0-6.8,41.9c1.08.2,1.47-.46,1.47-1s0-1.86,0-3.65c-6,1.3-7.24-2.88-7.24-2.88A5.7,5.7,0,0,0,9,33.68c-1.95-1.33.15-1.31.15-1.31a4.52,4.52,0,0,1,3.29,2.22c1.92,3.29,5,2.34,6.26,1.79a4.61,4.61,0,0,1,1.37-2.88c-4.78-.54-9.8-2.38-9.8-10.62a8.29,8.29,0,0,1,2.22-5.77,7.68,7.68,0,0,1,.21-5.69s1.8-.58,5.91,2.2a20.46,20.46,0,0,1,10.76,0c4.11-2.78,5.91-2.2,5.91-2.2a7.74,7.74,0,0,1,.21,5.69,8.28,8.28,0,0,1,2.21,5.77c0,8.26-5,10.07-9.81,10.61a5.12,5.12,0,0,1,1.46,4c0,2.87,0,5.19,0,5.9s.39,1.24,1.48,1A21.5,21.5,0,0,0,24,2.5"
-                                                                />
-                                                            </svg>
-                                                        </a>
-                                                    </div>
-                                                    <div>
-                                                        <p className='text-xs'>FAST API, PostgreSQL, AWS, META WA API, React JS</p>
-                                                    </div>
-                                                </a>
-                                                <Tooltip anchorSelect="#wacommtitle" place="top">
-                                                    Whatsapp Communication System
-                                                </Tooltip>
-                                                <div id="crmstitle" className='flex-1 hover:scale-105 cursor-pointer flex flex-col gap-3 border-2 border-[#eaeaea] p-5 h-full rounded-[35px]'>
-                                                    <div className='flex flex-1 justify-between items-center'>
-                                                        <div className='flex flex-1 items-center gap-1 text-[#E16349] font-bold'>
-                                                            <Player
-                                                                ref={mobileRef}
-                                                                size={30}
-                                                                icon={MOBILE}
-                                                                onComplete={() => mobileRef.current?.playFromBeginning()}
-                                                            />
-                                                            CRMS
-                                                        </div>
-                                                        <a onClick={() => window.open('https://github.com/priyankaj04/CampusRecruitmentApp', '_blank')} id='crmsgithub' className='cursor-pointer p-2 bg-[#eaeaea] rounded-full flex justify-center items-center'>
-                                                            <svg
-                                                                width="25px"
-                                                                height="25px"
-                                                                viewBox="0 0 48 48"
-                                                                id="Layer_2"
-                                                                data-name="Layer 2"
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                            >
-                                                                <defs>
-                                                                    <style>
-                                                                        {
-                                                                            ".cls-1{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;fill-rule:evenodd;stroke-width:2;}"
-                                                                        }
-                                                                    </style>
-                                                                </defs>
-                                                                <path
-                                                                    className="cls-1"
-                                                                    d="M24,2.5a21.5,21.5,0,0,0-6.8,41.9c1.08.2,1.47-.46,1.47-1s0-1.86,0-3.65c-6,1.3-7.24-2.88-7.24-2.88A5.7,5.7,0,0,0,9,33.68c-1.95-1.33.15-1.31.15-1.31a4.52,4.52,0,0,1,3.29,2.22c1.92,3.29,5,2.34,6.26,1.79a4.61,4.61,0,0,1,1.37-2.88c-4.78-.54-9.8-2.38-9.8-10.62a8.29,8.29,0,0,1,2.22-5.77,7.68,7.68,0,0,1,.21-5.69s1.8-.58,5.91,2.2a20.46,20.46,0,0,1,10.76,0c4.11-2.78,5.91-2.2,5.91-2.2a7.74,7.74,0,0,1,.21,5.69,8.28,8.28,0,0,1,2.21,5.77c0,8.26-5,10.07-9.81,10.61a5.12,5.12,0,0,1,1.46,4c0,2.87,0,5.19,0,5.9s.39,1.24,1.48,1A21.5,21.5,0,0,0,24,2.5"
-                                                                />
-                                                            </svg>
-                                                        </a>
-                                                    </div>
-                                                    <div>
-                                                        <p className='text-xs'>Node JS, Express JS, PostgreSQL, React Native</p>
-                                                    </div>
-                                                </div>
-                                                <Tooltip anchorSelect="#crmstitle" place="top">
-                                                    Campus Recruitment Management System
-                                                </Tooltip>
-                                                <div id="blogtitle" className='flex-1 hover:scale-105 cursor-pointer flex flex-col gap-3 bg-[#eaeaea] p-5 h-full rounded-[35px]'>
-                                                    <div className='flex flex-1 justify-between items-center'>
-                                                        <div className='flex flex-1 items-center gap-1 text-[#E16349] font-bold'>
-                                                            <Player
-                                                                ref={blogRef}
-                                                                size={30}
-                                                                icon={BLOG}
-                                                                onComplete={() => blogRef.current?.playFromBeginning()}
-                                                            />
-                                                            BaLanced-Blog
-                                                        </div>
-                                                        <a onClick={() => window.open('https://github.com/priyankaj04/Graph-CMS-Blog', '_blank')} id='bloggithub' className='cursor-pointer p-2 bg-white rounded-full flex justify-center items-center'>
-                                                            <svg
-                                                                width="25px"
-                                                                height="25px"
-                                                                viewBox="0 0 48 48"
-                                                                id="Layer_2"
-                                                                data-name="Layer 2"
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                            >
-                                                                <defs>
-                                                                    <style>
-                                                                        {
-                                                                            ".cls-1{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;fill-rule:evenodd;stroke-width:2;}"
-                                                                        }
-                                                                    </style>
-                                                                </defs>
-                                                                <path
-                                                                    className="cls-1"
-                                                                    d="M24,2.5a21.5,21.5,0,0,0-6.8,41.9c1.08.2,1.47-.46,1.47-1s0-1.86,0-3.65c-6,1.3-7.24-2.88-7.24-2.88A5.7,5.7,0,0,0,9,33.68c-1.95-1.33.15-1.31.15-1.31a4.52,4.52,0,0,1,3.29,2.22c1.92,3.29,5,2.34,6.26,1.79a4.61,4.61,0,0,1,1.37-2.88c-4.78-.54-9.8-2.38-9.8-10.62a8.29,8.29,0,0,1,2.22-5.77,7.68,7.68,0,0,1,.21-5.69s1.8-.58,5.91,2.2a20.46,20.46,0,0,1,10.76,0c4.11-2.78,5.91-2.2,5.91-2.2a7.74,7.74,0,0,1,.21,5.69,8.28,8.28,0,0,1,2.21,5.77c0,8.26-5,10.07-9.81,10.61a5.12,5.12,0,0,1,1.46,4c0,2.87,0,5.19,0,5.9s.39,1.24,1.48,1A21.5,21.5,0,0,0,24,2.5"
-                                                                />
-                                                            </svg>
-                                                        </a>
-                                                    </div>
-                                                    <div>
-                                                        <p className='text-xs'>NextJS, GraphQl, GraphCMS</p>
-                                                    </div>
-                                                </div>
-                                                <Tooltip anchorSelect="#blogtitle" place="top">
-                                                    CRUD Web Blog
-                                                </Tooltip>
-                                            </div> : ''
-                                }
-                            </div>
-                        </div>
-                    </div> */}
                     <Projects />
                 </div>
             </div>
@@ -629,10 +450,10 @@ function Languages() {
                         </div>
                     </div>
                 </div>
-                <div className='p-5 hover:scale-105 cursor-pointer h-2/4 rounded-[35px] bg-[#eaeaea] flex flex-col justify-evenly'>
+                <div className='p-5 hover:scale-105 cursor-pointer h-2/4 rounded-[35px] bg-[#eaeaea] flex flex-col justify-evenly gap-2'>
                     <span className='text-sm font-semibold'>That’s my story so far!</span>
-                    <span className='text-md'>I’m passionate about building meaningful tech and constantly learning along the way. Ready to build something extraordinary together?</span>
-                    <span className='text-[#E16349] font-semibold text-md'>Thank you for visiting! Let's create something impactful and extraordinary!</span>
+                    <span className='text-md'>I believe that hard work and persistence pave the way for success. Eager to take risks, push boundaries, and solve problems that deliver real impact.</span>
+                    <span className='text-[#808080] text-xs'>© 2025 All Rights Reserved.</span>
                 </div>
             </div>
         </div>
