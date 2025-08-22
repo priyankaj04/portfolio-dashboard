@@ -21,7 +21,7 @@ function HeaderBox() {
         <div className="flex flex-1 flex-col lg:flex-row justify-between">
             <div className="flex gap-5 flex-shrink flex-row items-center justify-center">
                 <div className="lg:w-20 lg:h-20 p-5 rounded-full border border-[#b4b4b4] flex justify-center items-center text-2xl font-semibold">
-                    2+
+                    3
                 </div>
                 <div className="items-center">
                     <div className='text-md mb-0 font-semibold'>years,</div>
